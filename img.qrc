@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Images/video.png</file>
+        <file>Images/bgBtnRect.png</file>
+        <file>Images/LocationIcon.png</file>
+        <file>Images/MainScteenIcon.png</file>
+        <file>Images/WeatherIcon.png</file>
+        <file>Images/bgPlane.png</file>
+    </qresource>
+</RCC>

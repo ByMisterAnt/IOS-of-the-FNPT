@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>Elements/CustomButton.qml</file>
+        <file>UI/MainScreen.qml</file>
+    </qresource>
+</RCC>

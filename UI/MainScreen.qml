@@ -85,10 +85,22 @@ Item {
             }
 
             TextInput {
-                id: inputText
-                text: qsTr("Default text ")
-                height: 100
+                id: inputTextAddr
+                text: qsTr("http://127.0.0.1:8000/json/position/altitude-ft")
+                font.pointSize: 14
+                color: "white"
+                height: 20
             }
+
+            TextInput {
+                id: inputTextValue
+                text: qsTr("11,0")
+                font.pointSize: 14
+                color: "white"
+                height: 20
+            }
+
+
 
 
             CustomButton
@@ -109,8 +121,9 @@ Item {
                 onClicked:
                 {
 
-                    changedTextField.text = inputText.text + value;
-                    app.printFromQml(inputText.text);
+                    //changedTextField.text = inputText.text + value;
+                    app.sendToFG(inputTextAddr.text, inputTextValue.text);
+                    //app.printFromQml(inputText.text);
 
                 }
 

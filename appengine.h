@@ -5,7 +5,13 @@
 #include <string>
 #include <QString>
 #include <QObject>
-
+#include <QNetworkAccessManager>
+#include <QByteArray>
+#include <QNetworkReply>
+#include <QJsonDocument>
+#include <QJsonObject>
+//QStringLiteral
+#include "Utils/FgAdapter.h"
 
 class appEngine : public QObject
 {
@@ -26,7 +32,11 @@ signals:
 public slots:
 
     void printFromQml(QString areaText);
+    void sendToFG(QString addr, QString value);
 
+private:
+    FgAdapter fgAdapter;
+    QNetworkAccessManager *mgr;
 };
 
 #endif // APPENGINE_H

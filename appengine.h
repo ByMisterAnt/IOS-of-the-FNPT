@@ -1,4 +1,4 @@
-#ifndef APPENGINE_H
+﻿#ifndef APPENGINE_H
 #define APPENGINE_H
 
 #include <iostream>
@@ -10,8 +10,6 @@
 #include <QNetworkReply>
 #include <QJsonDocument>
 #include <QJsonObject>
-//QStringLiteral
-#include "Utils/FgAdapter.h"
 
 class appEngine : public QObject
 {
@@ -35,7 +33,6 @@ public slots:
     void sendToFG(QString addr, QString value);
 
 private:
-    FgAdapter fgAdapter;
     QNetworkAccessManager *mgr;
 };
 

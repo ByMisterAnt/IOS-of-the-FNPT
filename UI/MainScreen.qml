@@ -1,4 +1,4 @@
-﻿import QtQuick 2.15
+import QtQuick 2.15
 import QtQuick.Window 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
@@ -15,6 +15,7 @@ Item {
     Row
     {
         anchors.fill: parent
+
 
         Page
         {
@@ -51,15 +52,20 @@ Item {
                     onClicked:
                     {
 
-                        changedTextField.text = inputText.text + model.value;
-                        app.printFromQml(inputText.text);
+                        //changedTextField.text = inputText.text + model.value;
+                        //app.printFromQml(inputText.text);
+                        mainLoader2.source = model.path
 
                     }
                 }
 
             }
 
+
         }
+
+
+
         Column{
 
             width: parent.width * 3 / 4 - 100
@@ -142,6 +148,7 @@ Item {
             url: "qrc:/Images/MainScteenIcon.png"
             text: "Начать"
             value: "btn1"
+            path: "qrc:/Elements/Buttonweather.qml"
         }
 
         ListElement

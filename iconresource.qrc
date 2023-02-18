@@ -1,0 +1,21 @@
+<RCC>
+    <qresource prefix="/allicon">
+        <file>environmenticon.png</file>
+        <file>mapicon.png</file>
+        <file>mistakeicon.png</file>
+        <file>setupicon.png</file>
+        <file>autostartair.png</file>
+        <file>autostarte.png</file>
+        <file>cloud.png</file>
+        <file>dayandnight.png</file>
+        <file>graffic.png</file>
+        <file>mictake.png</file>
+        <file>play.png</file>
+        <file>rain.png</file>
+        <file>snow.png</file>
+        <file>speed.png</file>
+        <file>sunny.png</file>
+        <file>weight.png</file>
+        <file>wind.png</file>
+    </qresource>
+</RCC>

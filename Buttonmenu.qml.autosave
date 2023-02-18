@@ -1,0 +1,126 @@
+import QtQuick 2.12
+import QtQuick.Controls 2.15
+import QtQuick.Layouts 1.2
+
+Item {
+    width: 700
+    height: 660
+    Image {
+        id: dayandnighticon
+        x: 10
+        y: 0
+        source: "dayandnight.png"
+        sourceSize.height: 80
+        sourceSize.width: 80
+        fillMode: Image.PreserveAspectFit
+    }
+
+    Text {
+        id: text1
+        x: 10
+        y: 85
+        color: "#e5f6fe"
+        text: "Время суток"
+        font.pixelSize: 14
+        horizontalAlignment: Text.AlignHCenter
+        styleColor: "#e5f6fe"
+        font.weight: Font.Light
+        font.family: "Arial"
+    }
+
+    Image {
+        id: windicon
+        x: 10
+        y: 135
+        source: "wind.png"
+        fillMode: Image.PreserveAspectFit
+        sourceSize.height: 80
+        sourceSize.width: 80
+    }
+
+    Text {
+        id: text2
+        x: 27
+        y: 220
+        color: "#e5f6fe"
+        text: "Ветер"
+        font.pixelSize: 14
+        horizontalAlignment: Text.AlignHCenter
+        styleColor: "#e5f6fe"
+        font.weight: Font.Light
+        font.family: "Arial"
+    }
+
+    Image {
+        id: snowicon
+        x: 10
+        y: 270
+        source: "snow.png"
+        fillMode: Image.PreserveAspectFit
+        sourceSize.height: 80
+        sourceSize.width: 80
+    }
+
+    Text {
+        id: text3
+        x: 31
+        y: 355
+        color: "#e5f6fe"
+        text: "Снег"
+        font.pixelSize: 14
+        horizontalAlignment: Text.AlignHCenter
+        styleColor: "#e5f6fe"
+        font.weight: Font.Light
+        font.family: "Arial"
+    }
+
+    Image {
+        id: rainicon
+        x: 10
+        y: 405
+        source: "rain.png"
+        fillMode: Image.PreserveAspectFit
+        sourceSize.height: 80
+        sourceSize.width: 80
+    }
+
+    Text {
+        id: text4
+        x: 25
+        y: 490
+        color: "#e5f6fe"
+        text: "Дождь"
+        font.pixelSize: 14
+        horizontalAlignment: Text.AlignHCenter
+        styleColor: "#e5f6fe"
+        font.weight: Font.Light
+        font.family: "Arial"
+    }
+
+
+    Image {
+        id: cloudicon
+        x: 10
+        y: 540
+        source: "cloud.png"
+        fillMode: Image.PreserveAspectFit
+        sourceSize.height: 80
+        sourceSize.width: 80
+    }
+
+
+
+
+    Text {
+        id: text5
+        x: 16
+        y: 625
+        color: "#e5f6fe"
+        text: "Настройки"
+        font.pixelSize: 14
+        horizontalAlignment: Text.AlignHCenter
+        styleColor: "#e5f6fe"
+        font.weight: Font.Light
+        font.family: "Arial"
+    }
+}

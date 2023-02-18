@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/pictures">
+        <file>fire.png</file>
+        <file>airplane1.jpg</file>
+        <file>airplaneback.jpeg</file>
+        <file>weather.jpeg</file>
+        <file>map.jpeg</file>
+    </qresource>
+</RCC>

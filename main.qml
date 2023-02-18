@@ -16,8 +16,8 @@ Window {
 
     Rectangle {
         id: mainrectangle
-        anchors.top: parent
-        anchors.left: parent
+        //anchors.top: parent
+        //anchors.left: parent
         width: parent.width/6
         height: parent.height
         color: "#0D226F"
@@ -26,6 +26,7 @@ Window {
             y: 50
             //anchors.horizontalCenter:parent.horizontalCenter не работает эта строка
             x: parent.width/3
+            //source: "qrc:/UI/Mapmain.qml"//"qrc:/UI/Mainmenu.qml"
             source: "qrc:/Mainmenu.qml"
             //Функция для смены содержимого в Loader
             function loadFragment(index){
@@ -41,7 +42,7 @@ Window {
                             loader.source = "qrc:/Buttonweather.qml"
                             break;
                         case 3:
-                            loader.source = "qrc:/Mapmain.qml"
+                            loader.source = "qrc:/Mapmain.qmll"
                             break;
                         case 4:
                             loader.source = "qrc:/Setupmain.qml"

@@ -9,7 +9,7 @@ Item {
 
 
 
-    Image {
+   /* Image {
         id: imageback
         x: -50
         y: -50
@@ -18,9 +18,7 @@ Item {
         opacity: 0.1
         source: "qrc:/pictures/map.jpeg"
         clip: false
-
     }
-
     Rectangle {
         id: rectangle
         x: 250
@@ -30,7 +28,6 @@ Item {
         color: "#e5f6fe"
         radius: 20
         border.width: 0
-
         Text {
             id: text1
             x: 96
@@ -42,7 +39,6 @@ Item {
             font.styleName: "Regular"
             font.family: "Arial"
         }
-
         MouseArea {
             id: mouseArea
             x: 0
@@ -51,7 +47,6 @@ Item {
             height: 70
         }
     }
-
     Rectangle {
         id: rectangle1
         x: 250
@@ -72,7 +67,6 @@ Item {
             font.styleName: "Regular"
             font.family: "Arial"
         }
-
         MouseArea {
             id: mouseArea1
             x: 0
@@ -81,7 +75,6 @@ Item {
             height: 70
         }
     }
-
     Rectangle {
         id: rectangle2
         x: 460
@@ -102,7 +95,6 @@ Item {
             font.styleName: "Regular"
             font.family: "Arial"
         }
-
         MouseArea {
             id: mouseArea2
             x: 0
@@ -110,31 +102,29 @@ Item {
             width: 190
             height: 70
         }
-    }
+    }*/
 
 
 
 
-//Нифига не работает, если убрать комментарий вообще не выведется ничего на экран, если убрать предыдущий код, текст не будет меняться
-   /*ListView{
+
+   ListView{
         id:pole
         anchors.fill: parent
-                        spacing:  20
+        spacing:  20
+        model:polemodel
+        delegate:
+
     Rectangle {
         id: example
-        x: 200
-        y: 50
         width: 400
         height: 70
         color: "#e5f6fe"
         radius: 20
         border.width: 0
-    }
 
     Text {
-        id: text1
-        x: 215
-        y: 76
+        id: text12
         width: 74
         height: 18
         color: "#0d226e"
@@ -142,11 +132,8 @@ Item {
         font.pixelSize: 16
         font.family: "Arial"
     }
-
     TextInput {
         id: textInput
-        x: 300
-        y: 75
         maximumLength: 32767
         width: 283
         height: 20
@@ -157,35 +144,31 @@ Item {
         selectedTextColor: "#e5f6fe"
         font.family: "Arial"
     }
+        }
 
     }
-
     ListModel{
         id:polemodel
         ListElement
                 {
                     text: "Долгота"
-                   // value: "btn1"
-                }
 
+                }
                 ListElement
                 {
                     text: "Широта"
-                    //value: "btn2"
-                }
 
+                }
                 ListElement
                 {
                     text: "Высота в м"
-                    //value: "btn3"
 
                 }
                 ListElement
                 {
                     text: "Аэродром"
-                    //value: "btn4"
 
                 }
-    }*/
+    }
 
 }

@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>Buttonweather.qml</file>
+        <file>Buttonmain.qml</file>
+        <file>Buttonmistake.qml</file>
+        <file>Mapmain.qml</file>
+        <file>Setupmain.qml</file>
+    </qresource>
+</RCC>

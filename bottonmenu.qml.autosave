@@ -1,0 +1,17 @@
+import QtQuick 2.12
+import QtQuick.Controls 2.15
+
+Item {
+    Button{
+        display: AbstractButton.IconOnly
+        Text{
+       anchors.centerIn: Button
+       color: "#E5F6FE"
+       horizontalAlignment: Text.AlignHCenter
+       font.weight: Font.Light
+       font.family: "Arial"
+       font.pointSize: 14
+        }
+    
+}
+}

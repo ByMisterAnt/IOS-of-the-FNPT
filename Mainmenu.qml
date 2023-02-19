@@ -1,178 +1,99 @@
 import QtQuick 2.12
 import QtQuick.Controls 2.15
-import QtQuick.Layouts 1.2
+import QtQuick.Window 2.15
+import QtQuick.Layouts 1.15
 
 Item {
-    //y: 50
-    //x: parent.width/3
-    width: parent.width/3
-    height: parent.height
-    Image {
-        id: mainicon
-        x: 10
-        y: 0
-        source: "qrc:/imagesresoures/mainicon.png"
-        sourceSize.height: 80
-        sourceSize.width: 80
-        fillMode: Image.PreserveAspectFit
-    }
+    width: parent.width*5+50
+    height: parent.height+50
 
-    Text {
-        id: text1
-        x: 24
-        y: 85
-        color: "#e5f6fe"
-        text: "Главная"
-        font.pixelSize: 14
-        horizontalAlignment: Text.AlignHCenter
-        styleColor: "#e5f6fe"
-        font.weight: Font.Light
-        font.family: "Arial"
-    }
+    ListView{
+         id:pole1
+         anchors.fill: parent
+         spacing:  50
+         model:polemodel
+         delegate:
 
-    Rectangle {
-        id: rectangle
-        x: 0
-        y: 110
-        width: 100
-        height: 2
-        opacity: 0.402
-        color: "#e5f6fe"
-        border.width: 0
-    }
+     Image {
+         id: example
+         width: 100
+         height: 100
+         source: model.url
+MouseArea{
+    id:maousearea2
+    width:100
+    height: 100
+}
+     Text {
+         id: text12
+         anchors.horizontalCenter: parent.horizontalCenter
+         //anchors.verticalCenter: parent.verticalCenter
+         horizontalAlignment: Text.AlignHCenter
+         anchors.bottom: parent.bottom
+         anchors.bottomMargin: -25
+         width: 74
+         height: 18
+         color: "#e5f6fe"
+         text: model.text
+         font.pixelSize: 16
+         font.family: "Arial"
+         }
 
-    Image {
-        id: environmenticon
-        x: 10
-        y: 135
-        source: "qrc:/allicon/environmenticon.png"
-        fillMode: Image.PreserveAspectFit
-        sourceSize.height: 80
-        sourceSize.width: 80
-    }
+         Rectangle {
+                 id: rectangle1
+                 anchors.horizontalCenter: parent.horizontalCenter
+                 y: 135
+                 width: 100
+                 height: 2
+                 opacity: 0.4
+                 color: "#e5f6fe"
+                 border.width: 0
 
-    Text {
-        id: text2
-        x: 27
-        y: 220
-        color: "#e5f6fe"
-        text: "Погода"
-        font.pixelSize: 14
-        horizontalAlignment: Text.AlignHCenter
-        styleColor: "#e5f6fe"
-        font.weight: Font.Light
-        font.family: "Arial"
-    }
+                 }
+                        /*onClicked:
+                             {
+                                 proverka.source = model.path
+          }*/
 
-    Rectangle {
-        id: rectangle1
-        x: 0
-        y: 245
-        width: 100
-        height: 2
-        opacity: 0.402
-        color: "#e5f6fe"
-        border.width: 0
-    }
+ }
+     ListModel{
+         id:polemodel
+         ListElement
+                 {
+                     text: "Главная"
+                    url: "qrc:/imagesresoures/mainicon.png"
+                    value: "btn1"
+                                //path: "qrc:/Buttonmain.qml"
 
-    Image {
-        id: mapicon
-        x: 10
-        y: 270
-        source: "qrc:/allicon/mapicon.png"
-        fillMode: Image.PreserveAspectFit
-        sourceSize.height: 80
-        sourceSize.width: 80
-    }
-
-    Text {
-        id: text3
-        x: 3
-        y: 355
-        color: "#e5f6fe"
-        text: "Расположение"
-        font.pixelSize: 14
-        horizontalAlignment: Text.AlignHCenter
-        styleColor: "#e5f6fe"
-        font.weight: Font.Light
-        font.family: "Arial"
-    }
-
-    Rectangle {
-        id: rectangle2
-        x: 0
-        y: 380
-        width: 100
-        height: 2
-        opacity: 0.402
-        color: "#e5f6fe"
-        border.width: 0
-    }
-
-    Image {
-        id: mistakeicon
-        x: 10
-        y: 405
-        source: "qrc:/allicon/mistakeicon.png"
-        fillMode: Image.PreserveAspectFit
-        sourceSize.height: 80
-        sourceSize.width: 80
-    }
-
-    Text {
-        id: text4
-        x: 26
-        y: 490
-        color: "#e5f6fe"
-        text: "Отказы"
-        font.pixelSize: 14
-        horizontalAlignment: Text.AlignHCenter
-        styleColor: "#e5f6fe"
-        font.weight: Font.Light
-        font.family: "Arial"
-    }
-
-
-    Rectangle {
-        id: rectangle3
-        x: 0
-        y: 515
-        width: 100
-        height: 2
-        opacity: 0.402
-        color: "#e5f6fe"
-        border.width: 0
-    }
-
-    Image {
-        id: setupicon
-        x: 10
-        y: 540
-        source: "qrc:/allicon/setupicon.png"
-        fillMode: Image.PreserveAspectFit
-        sourceSize.height: 80
-        sourceSize.width: 80
-    }
-
-
-
-
-    Text {
-        id: text5
-        x: 16
-        y: 625
-        color: "#e5f6fe"
-        text: "Настройки"
-        font.pixelSize: 14
-        horizontalAlignment: Text.AlignHCenter
-        styleColor: "#e5f6fe"
-        font.weight: Font.Light
-        font.family: "Arial"
-    }
-
-
-
-
-
-
+                 }
+                 ListElement
+                 {
+                     text: "Погода"
+                     url: "qrc:/allicon/environmenticon.png"
+                     value: "btn2"
+                                // path: "qrc:/Buttonweather.qml"
+                 }
+                 ListElement
+                 {
+                     text: "Расположение"
+                     url: "qrc:/allicon/mapicon.png"
+                     value: "btn3"
+                                 path: "qrc:/Mapmain.qml"
+                 }
+                 ListElement
+                 {
+                     text: "Отказы"
+                     url: "qrc:/allicon/mistakeicon.png"
+                     value: "btn4"
+                                // path: "qrc:/Buttonmistake.qml"
+                 }
+                 ListElement
+                 {
+                     text: "Настройки"
+                     url: "qrc:/allicon/setupicon.png"
+                     value: "btn5"
+                                // path: "qrc:/Setupmain.qml"
+                 }
+     }
+}
 }

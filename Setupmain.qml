@@ -9,23 +9,27 @@ Item {
 
 
     Image {
-        id: imageback
-        x: -50
-        y: -50
-        width: 1350
-        height: 900
-        opacity: 0.1
-        source: "qrc:/pictures/airplaneback.jpeg"
-        clip: false
+            id: imageback
+            anchors.top: parent.top
+            anchors.topMargin: -50
+            anchors.left: parent.left
+            anchors.leftMargin: -20
+            width: 1350
+            height: 900
+            opacity: 0.1
+            source: "qrc:/pictures/airplaneback.jpeg"
+            clip: false
 
-    }
+        }
 
 
 
     Rectangle {
-        id: example
-        x: 250
-        y: 100
+        id: example10
+        anchors.top: parent.top
+        anchors.topMargin: 100
+        anchors.left: imageback.left
+        anchors.leftMargin: 250
         width: 400
         height: 70
         color: "#e5f6fe"
@@ -33,7 +37,7 @@ Item {
         border.width: 0
 
         Text {
-            id: text1
+            id: text10
             x: 15
             y: 25
             width: 74
@@ -45,7 +49,7 @@ Item {
         }
 
         TextInput {
-            id: textInput
+            id: textInput10
             x: 100
             y: 25
             maximumLength: 32767
@@ -61,16 +65,18 @@ Item {
     }
 
     Rectangle {
-        id: rectangle2
-        x: 250
-        y: 300
+        id: rectangle20
+        anchors.top: parent.top
+        anchors.topMargin: 300
+        anchors.left: imageback.left
+        anchors.leftMargin: 250
         width: 190
         height: 70
         color: "#e5f6fe"
         radius: 20
         border.width: 0
         Text {
-            id: text3
+            id: text20
             x: 55
             y: 26
             color: "#0d226e"
@@ -82,7 +88,7 @@ Item {
         }
 
         MouseArea {
-            id: mouseArea2
+            id: mouseArea20
             x: 0
             y: 0
             width: 190
@@ -91,16 +97,18 @@ Item {
     }
 
     Rectangle {
-        id: example1
-        x: 250
-        y: 200
+        id: example30
+        anchors.top: parent.top
+        anchors.topMargin: 200
+        anchors.left: imageback.left
+        anchors.leftMargin: 250
         width: 400
         height: 70
         color: "#e5f6fe"
         radius: 20
         border.width: 0
         Text {
-            id: text2
+            id: text30
             x: 15
             y: 25
             width: 74
@@ -112,7 +120,7 @@ Item {
         }
 
         TextInput {
-            id: textInput1
+            id: textInput30
             x: 100
             y: 25
             width: 283

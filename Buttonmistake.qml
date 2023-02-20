@@ -1,7 +1,7 @@
 import QtQuick 2.12
 import QtQuick.Controls 2.15
-import QtQuick.Layouts 1.2
-
+import QtQuick.Window 2.15
+import QtQuick.Layouts 1.15
 Item {
     width: parent.width*5+50
     height: parent.height+50
@@ -10,72 +10,81 @@ Item {
 
     Image {
         id: imageback
-        x: -50
-        y: -50
+        anchors.top: parent.top
+        anchors.topMargin: -50
+        anchors.left: parent.left
+        anchors.leftMargin: -20
         width: 1350
         height: 900
         opacity: 0.1
-        source: "qrc:/pictures/airplaneback.jpeg"
+        source: "qrc:/pictures/weather.jpeg"
         clip: false
 
     }
-    Image {
-        id: mictakeicon
-        x: 0
-        y: 237
-        source: "qrc:/allicon/mictake.png"
-        fillMode: Image.PreserveAspectFit
-        sourceSize.height: 80
-        sourceSize.width: 80
-    }
-
-    Text {
-        id: text3
-        x: 16
-        y: 322
-        color: "#e5f6fe"
-        text: "Отказы"
-        font.pixelSize: 14
-        horizontalAlignment: Text.AlignHCenter
-        styleColor: "#e5f6fe"
-        font.weight: Font.Light
-        font.family: "Arial"
-    }
-
-    Image {
-        id: grafficicon
-        x: 0
-        y: 372
-        source: "qrc:/allicon/graffic.png"
-        fillMode: Image.PreserveAspectFit
-        sourceSize.height: 80
-        sourceSize.width: 80
-    }
-
-    Text {
-        id: text4
-        x: 15
-        y: 457
-        color: "#e5f6fe"
-        text: "Графики"
-        font.pixelSize: 14
-        horizontalAlignment: Text.AlignHCenter
-        styleColor: "#e5f6fe"
-        font.weight: Font.Light
-        font.family: "Arial"
-    }
-
-
-
-
 
     Rectangle {
-        id: rectangle
-        x: 105
-        y: 55
+        id: rectangle234
+        anchors.top: parent.top
+        anchors.topMargin: 120
+        anchors.left: parent.left
+        anchors.leftMargin: 130
         width: 2
         height: 550
         opacity: 0.40
         color: "#e5f6fe"
     }
+
+    ListView{
+         id:pole12
+         anchors.fill: parent
+         spacing:  50
+         model:polemodel1
+         delegate:
+
+     Image {
+         id: example12
+         width: 100
+         height: 100
+         source: model.url
+MouseArea{
+    id:maousearea2
+    width:100
+    height: 100
+}
+     Text {
+         id: text123
+         anchors.horizontalCenter: parent.horizontalCenter
+         //anchors.verticalCenter: parent.verticalCenter
+         horizontalAlignment: Text.AlignHCenter
+         anchors.bottom: parent.bottom
+         anchors.bottomMargin: -25
+         width: 74
+         height: 18
+         color: "#e5f6fe"
+         text: model.text
+         font.pixelSize: 16
+         font.family: "Arial"
+         }
+
+ }
+     ListModel{
+         id:polemodel1
+         ListElement
+                 {
+                     text: "Отказы"
+                    url: "qrc:/allicon/mictake.png"
+                    value: "btn1"
+                                //path: "qrc:/Buttonmain.qml"
+
+                 }
+                 ListElement
+                 {
+                     text: "Графики"
+                     url: "qrc:/allicon/graffic.png"
+                     value: "btn2"
+                                // path: "qrc:/Buttonweather.qml"
+                 }
+
+     }
+}
 }

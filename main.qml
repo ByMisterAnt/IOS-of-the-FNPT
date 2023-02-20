@@ -34,7 +34,7 @@ Window {
         anchors.top: parent.top
         anchors.topMargin: 50
         x: parent.width+20
-        source: "qrc:/Mapmain.qml"
+        source: "qrc:/Buttonmain.qml"
     }
 
 }

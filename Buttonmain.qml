@@ -1,7 +1,7 @@
 import QtQuick 2.12
 import QtQuick.Controls 2.15
-import QtQuick.Layouts 1.2
-
+import QtQuick.Window 2.15
+import QtQuick.Layouts 1.15
 Item {
     width: parent.width*5+50
     height: parent.height+50
@@ -10,8 +10,10 @@ Item {
 
     Image {
         id: imageback
-        x: -50
-        y: -50
+        anchors.top: parent.top
+        anchors.topMargin: -50
+        anchors.left: parent.left
+        anchors.leftMargin: -20
         width: 1350
         height: 900
         opacity: 0.1
@@ -20,136 +22,90 @@ Item {
 
     }
 
-    Image {
-        id: autostarteiicon
-        x: 0
-        y: -10
-        source: "qrc:/allicon/autostarte.png"
-        sourceSize.height: 100
-        sourceSize.width: 100
-        fillMode: Image.PreserveAspectFit
-    }
-
-    Text {
-        id: text1
-        x: 17
-        y: 85
-        color: "#e5f6fe"
-        text: "Автостарт"
-        font.pixelSize: 14
-        horizontalAlignment: Text.AlignHCenter
-        styleColor: "#e5f6fe"
-        font.weight: Font.Light
-        font.family: "Arial"
-    }
-
-    Image {
-        id: aurostartairicon
-        x: 0
-        y: 120
-        source: "qrc:/allicon/autostartair.png"
-        fillMode: Image.PreserveAspectFit
-        sourceSize.height: 100
-        sourceSize.width: 100
-    }
-
-    Text {
-        id: text2
-        x: 13
-        y: 220
-        width: 77
-        height: 37
-        color: "#e5f6fe"
-        text: "Автостарт\nв воздухе"
-        font.pixelSize: 14
-        horizontalAlignment: Text.AlignHCenter
-        styleColor: "#e5f6fe"
-        font.weight: Font.Light
-        font.family: "Arial"
-    }
-
-    Image {
-        id: speedicon
-        x: 10
-        y: 270
-        source: "qrc:/allicon/speed.png"
-        fillMode: Image.PreserveAspectFit
-        sourceSize.height: 80
-        sourceSize.width: 80
-    }
-
-    Text {
-        id: text3
-        x: 21
-        y: 355
-        color: "#e5f6fe"
-        text: "Скорость"
-        font.pixelSize: 14
-        horizontalAlignment: Text.AlignHCenter
-        styleColor: "#e5f6fe"
-        font.weight: Font.Light
-        font.family: "Arial"
-    }
-
-    Image {
-        id: weighticon
-        x: 10
-        y: 405
-        source: "qrc:/allicon/weight.png"
-        fillMode: Image.PreserveAspectFit
-        sourceSize.height: 80
-        sourceSize.width: 80
-    }
-
-    Text {
-        id: text4
-        x: 29
-        y: 490
-        color: "#e5f6fe"
-        text: "Масса"
-        font.pixelSize: 14
-        horizontalAlignment: Text.AlignHCenter
-        styleColor: "#e5f6fe"
-        font.weight: Font.Light
-        font.family: "Arial"
-    }
-
-
-    Image {
-        id: playicon
-        x: 10
-        y: 540
-        source: "qrc:/allicon/play.png"
-        fillMode: Image.PreserveAspectFit
-        sourceSize.height: 80
-        sourceSize.width: 80
-    }
-
-
-
-
-    Text {
-        id: text5
-        x: 15
-        y: 625
-        color: "#e5f6fe"
-        text: "Заморозка"
-        font.pixelSize: 14
-        horizontalAlignment: Text.AlignHCenter
-        styleColor: "#e5f6fe"
-        font.weight: Font.Light
-        font.family: "Arial"
-    }
-
     Rectangle {
-        id: rectangle
-        x: 120
-        y: 55
+        id: rectangle234
+        anchors.top: parent.top
+        anchors.topMargin: 130
+        anchors.left: parent.left
+        anchors.leftMargin: 120
         width: 2
         height: 550
         opacity: 0.40
         color: "#e5f6fe"
     }
 
+    ListView{
+         id:pole12
+         anchors.fill: parent
+         spacing:  50
+         model:polemodel1
+         delegate:
 
+     Image {
+         id: example12
+         width: 100
+         height: 100
+         source: model.url
+MouseArea{
+    id:maousearea2
+    width:100
+    height: 100
+}
+     Text {
+         id: text123
+         anchors.horizontalCenter: parent.horizontalCenter
+         //anchors.verticalCenter: parent.verticalCenter
+         horizontalAlignment: Text.AlignHCenter
+         anchors.bottom: parent.bottom
+         anchors.bottomMargin: -25
+         width: 74
+         height: 18
+         color: "#e5f6fe"
+         text: model.text
+         font.pixelSize: 16
+         font.family: "Arial"
+         }
+
+ }
+     ListModel{
+         id:polemodel1
+         ListElement
+                 {
+                     text: "Автостарт"
+                    url: "qrc:/allicon/autostarte.png"
+                    value: "btn1"
+                                //path: "qrc:/Buttonmain.qml"
+
+                 }
+                 ListElement
+                 {
+                     text: "Автостарт
+в воздухе"
+                     url: "qrc:/allicon/autostartair.png"
+                     value: "btn2"
+                                // path: "qrc:/Buttonweather.qml"
+                 }
+                 ListElement
+                 {
+                     text: "Скорость"
+                     url: "qrc:/allicon/speed.png"
+                     value: "btn3"
+                                 path: "qrc:/Mapmain.qml"
+                 }
+                 ListElement
+                 {
+                     text: "Масса"
+                     url: "qrc:/allicon/weight.png"
+                     value: "btn4"
+                                // path: "qrc:/Buttonmistake.qml"
+                 }
+                 ListElement
+                 {
+                     text: "Заморозка"
+                     url: "qrc:/allicon/play.png"
+                     value: "btn5"
+                                // path: "qrc:/Setupmain.qml"
+                 }
+     }
+}
 }

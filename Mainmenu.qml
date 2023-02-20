@@ -23,6 +23,10 @@ MouseArea{
     id:maousearea2
     width:100
     height: 100
+    onClicked:
+         {
+             proverka.source = model.path
+}
 }
      Text {
          id: text12
@@ -50,10 +54,7 @@ MouseArea{
                  border.width: 0
 
                  }
-                        /*onClicked:
-                             {
-                                 proverka.source = model.path
-          }*/
+
 
  }
      ListModel{
@@ -63,7 +64,7 @@ MouseArea{
                      text: "Главная"
                     url: "qrc:/imagesresoures/mainicon.png"
                     value: "btn1"
-                                //path: "qrc:/Buttonmain.qml"
+                                path: "qrc:/Buttonmain.qml"
 
                  }
                  ListElement
@@ -71,7 +72,7 @@ MouseArea{
                      text: "Погода"
                      url: "qrc:/allicon/environmenticon.png"
                      value: "btn2"
-                                // path: "qrc:/Buttonweather.qml"
+                                 path: "qrc:/Buttonweather.qml"
                  }
                  ListElement
                  {
@@ -85,14 +86,14 @@ MouseArea{
                      text: "Отказы"
                      url: "qrc:/allicon/mistakeicon.png"
                      value: "btn4"
-                                // path: "qrc:/Buttonmistake.qml"
+                                 path: "qrc:/Buttonmistake.qml"
                  }
                  ListElement
                  {
                      text: "Настройки"
                      url: "qrc:/allicon/setupicon.png"
                      value: "btn5"
-                                // path: "qrc:/Setupmain.qml"
+                                 path: "qrc:/Setupmain.qml"
                  }
      }
 }

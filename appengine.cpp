@@ -31,7 +31,6 @@ void appEngine::sendToFG(QString addr, QString value)
     QJsonDocument doc(obj);
     QByteArray data = doc.toJson();
     mgr->post(request, data);
-
 }
 
 

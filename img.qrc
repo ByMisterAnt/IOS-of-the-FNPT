@@ -6,5 +6,6 @@
         <file>Images/MainScteenIcon.png</file>
         <file>Images/WeatherIcon.png</file>
         <file>Images/bgPlane.png</file>
+        <file>Images/mai.svg</file>
     </qresource>
 </RCC>

@@ -9,5 +9,6 @@
         <file>UI/Mainmenu.qml</file>
         <file>UI/Mapmain.qml</file>
         <file>UI/Setupmain.qml</file>
+        <file>UI/SplashScreen.qml</file>
     </qresource>
 </RCC>

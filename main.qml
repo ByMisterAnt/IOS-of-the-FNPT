@@ -1,4 +1,3 @@
-
 import QtQuick 2.15
 import QtQuick.Window 2.15
 import QtQuick.Controls 2.15
@@ -7,9 +6,11 @@ import QtQuick.Layouts 1.15
 
 
 Window {
-    width: 640
-    height: 480
-    visible: true
+    id: mainUI
+
+    width: 1280
+    height: 640
+    visible: false
     title: qsTr("IOS")
 
     Loader
@@ -31,5 +32,15 @@ Window {
 
             source: "qrc:/Elements/Buttonmistake.qml"
         }
+
+    Connections
+    {
+        target: app
+
+        function onOpenMain()
+        {
+            mainUI.visible = true;
+        }
+    }
 }
 

@@ -25,6 +25,7 @@ public:
 
 signals:
 
+    void openMain();
     void sendToQml(QString message);
 
 public slots:

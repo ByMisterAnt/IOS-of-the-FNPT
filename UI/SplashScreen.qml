@@ -1,8 +1,8 @@
 import QtQuick 2.15
 import QtQuick.Window 2.15
 import QtQuick.Shapes 1.15
-import QtQuick.Controls 2.15
 import QtGraphicalEffects 1.15
+
 
 Window
 {
@@ -21,11 +21,9 @@ Window
         id: arcContainer
 
         anchors.fill: parent
-        // Enable multisampled rendering
         layer.enabled: true
         layer.samples: 4
 
-        // Outer gray arc:
         ShapePath {
             id: shapePathRed
             fillColor: "transparent"
@@ -42,11 +40,10 @@ Window
             }
         }
 
-        // Inner blue arc:
         ShapePath {
             id: shapePathBlue
             fillColor: "transparent"
-            strokeColor: "blue"
+            strokeColor: "#0000cf"
             strokeWidth: 15
             capStyle: ShapePath.RoundCap
 
@@ -67,45 +64,53 @@ Window
 
     }
 
-    Column
+    Rectangle
     {
-        id: column
-        width: 350
-        height: 350
+        id: roundBg
+        width: 430
+        height: 430
+        radius: 430 / 2
         anchors.centerIn: parent
-        spacing: 10
+        color: "#8a000095"
 
-        Image
+        Column
         {
-            id: logo
-            width: 300
-            height: 300
-            anchors.horizontalCenter: parent.horizontalCenter
-            source: "qrc:/Images/mai.svg"
-        }
+            id: column
+            width: 350
+            height: 350
+            anchors.centerIn: parent
+            spacing: 10
 
-        Text
-        {
-            id: loadText
-            width: 350
-            height: 30
-            anchors.horizontalCenter: parent
-            color: "#ffffff"
-            text: loadPercent + "%"
-            horizontalAlignment: Text.AlignHCenter
-            verticalAlignment: Text.AlignVCenter
-            font.pointSize: 25
-        }
-        Text
-        {
-            id: loadingText
-            width: 350
-            height: 30
-            color: "#ffffff"
-            anchors.horizontalCenter: parent
-            text: qsTr("Загрузка...")
-            horizontalAlignment: Text.AlignHCenter
-            verticalAlignment: Text.AlignVCenter
+            Image
+            {
+                id: logo
+                width: 300
+                height: 300
+                anchors.horizontalCenter: parent.horizontalCenter
+                source: "qrc:/Images/mai.svg"
+            }
+
+            Text
+            {
+                id: loadText
+                width: 350
+                height: 30
+                color: "#ffffff"
+                text: loadPercent + "%"
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+                font.pointSize: 25
+            }
+            Text
+            {
+                id: loadingText
+                width: 350
+                height: 30
+                color: "#ffffff"
+                text: qsTr("Загрузка...")
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+            }
         }
     }
 

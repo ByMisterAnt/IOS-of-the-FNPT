@@ -2,25 +2,53 @@ import QtQuick 2.12
 import QtQuick.Controls 2.15
 import QtQuick.Window 2.15
 import QtQuick.Layouts 1.15
+import QtGraphicalEffects 1.12
 
 Item {
     width: parent.width*5+50
     height: parent.height+50
 
-    ListView{
+   ListView{
          id:pole1
          anchors.fill: parent
-         spacing:  50
+         spacing:  20
          model:polemodel
          delegate:
+             Item{
+                 id: example25
+                 width: 140
+                 height: 140
+
+                 RadialGradient{
+                     visible: (btnMouse.containsMouse) ? true : false
+                     anchors.fill: example25
+                     gradient: Gradient{
+
+                         GradientStop { position: 0.00; color: "#e5f6fe"}
+                         GradientStop { position: 0.5; color: "#0D226F"}
+
+                     }
+                 }
+                 MouseArea{
+                     id:btnMouse
+                     anchors.fill: parent
+                     hoverEnabled: true
+                     onClicked: example25.clicked()
+                     cursorShape: Qt.PointingHandCursor
+
+                 }
+
+
 
      Image {
          id: example
+         anchors.centerIn: example25
          width: 100
          height: 100
          source: model.url
 MouseArea{
     id:maousearea2
+    anchors.centerIn: example25
     width:100
     height: 100
     onClicked:
@@ -54,9 +82,9 @@ MouseArea{
                  border.width: 0
 
                  }
+}
 
-
- }
+}
      ListModel{
          id:polemodel
          ListElement

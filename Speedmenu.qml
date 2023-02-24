@@ -8,153 +8,6 @@ Item {
     height: parent.height+50
 
 
-
-    Image {
-            id: imageback
-            anchors.top: parent.top
-            anchors.topMargin: -50
-            anchors.left: parent.left
-            anchors.leftMargin: -20
-            width: 1350
-            height: 900
-            opacity: 0.1
-            source: "qrc:/pictures/map.jpeg"
-            clip: false
-
-        }
-    DropShadow
-        {
-            anchors.fill: example10
-            horizontalOffset: 4
-            verticalOffset: 4
-            radius: 10
-            samples: 15
-            source: example10
-            color: "#0d226e"
-        }
-    Rectangle {
-        id: example10
-        anchors.top: parent.top
-        anchors.topMargin: 100
-        anchors.left: imageback.left
-        anchors.leftMargin: 250
-        width: 400
-        height: 70
-        color: "#e5f6fe"
-        radius: 20
-        border.width: 0
-
-        Text {
-            id: text11
-            x: 15
-            y: 25
-            width: 74
-            height: 18
-            color: "#0d226e"
-            text: "Долгота"
-            font.pixelSize: 16
-            font.family: "Arial"
-        }
-        DropShadow
-            {
-                anchors.fill: shadow29
-                horizontalOffset: 3
-                verticalOffset: 3
-                radius: 10
-                samples: 15
-                source: shadow29
-                color: "#c3d0ff"
-            }
-        Rectangle{
-            id:shadow29
-           x: 135
-           y: 25
-           width: 250
-           height: 20
-           radius: 20
-           color: "#dff5ff"
-       }
-        TextInput {
-            id: textInput11
-            x: 140
-            y: 25
-            maximumLength: 32767
-            width: 283
-            height: 20
-            color: "#0d226e"
-            text: qsTr("")
-            font.pixelSize: 16
-            selectionColor: "#0d226e"
-            selectedTextColor: "#e5f6fe"
-            font.family: "Arial"
-        }
-    }
-    DropShadow
-        {
-            anchors.fill: example20
-            horizontalOffset: 4
-            verticalOffset: 4
-            radius: 10
-            samples: 15
-            source: example20
-            color: "#0d226e"
-        }
-    Rectangle {
-        id: example20
-        anchors.top: parent.top
-        anchors.topMargin: 200
-        anchors.left: imageback.left
-        anchors.leftMargin: 250
-        width: 400
-        height: 70
-        color: "#e5f6fe"
-        radius: 20
-        border.width: 0
-        Text {
-            id: text22
-            x: 15
-            y: 25
-            width: 74
-            height: 18
-            color: "#0d226e"
-            text: "Широта"
-            font.pixelSize: 16
-            font.family: "Arial"
-        }
-        DropShadow
-            {
-                anchors.fill: shadow27
-                horizontalOffset: 3
-                verticalOffset: 3
-                radius: 10
-                samples: 15
-                source: shadow27
-                color: "#c3d0ff"
-            }
-        Rectangle{
-            id:shadow27
-           x: 135
-           y: 25
-           width: 250
-           height: 20
-           radius: 20
-           color: "#dff5ff"
-       }
-        TextInput {
-            id: textInput22
-            x: 140
-            y: 25
-            width: 283
-            height: 20
-            color: "#0d226e"
-            text: qsTr("")
-            font.pixelSize: 16
-            selectionColor: "#0d226e"
-            maximumLength: 32767
-            selectedTextColor: "#e5f6fe"
-            font.family: "Arial"
-        }
-    }
     DropShadow
         {
             anchors.fill: example34
@@ -168,9 +21,9 @@ Item {
     Rectangle {
         id: example34
         anchors.top: parent.top
-        anchors.topMargin: 300
-        anchors.left: imageback.left
-        anchors.leftMargin: 250
+        anchors.topMargin: 200
+        anchors.left: parent.left
+        anchors.leftMargin: 0
         width: 400
         height: 70
         color: "#e5f6fe"
@@ -183,7 +36,7 @@ Item {
             width: 74
             height: 18
             color: "#0d226e"
-            text: "Высота в м"
+            text: "Скорость в м/с"
             font.pixelSize: 16
             font.family: "Arial"
         }
@@ -199,9 +52,9 @@ Item {
             }
         Rectangle{
             id:shadow25
-           x: 135
+           x: 155
            y: 25
-           width: 250
+           width: 225
            height: 20
            radius: 20
            color: "#dff5ff"
@@ -209,7 +62,7 @@ Item {
 
         TextInput {
             id: textInput34
-            x: 140
+            x: 160
             y: 25
             width: 283
             height: 20
@@ -235,9 +88,9 @@ Item {
     Rectangle {
         id: example40
         anchors.top: parent.top
-        anchors.topMargin: 400
-        anchors.left: imageback.left
-        anchors.leftMargin: 250
+        anchors.topMargin: 300
+        anchors.left: parent.left
+        anchors.leftMargin: 0
         width: 400
         height: 70
         color: "#e5f6fe"
@@ -250,7 +103,7 @@ Item {
             width: 74
             height: 18
             color: "#0d226e"
-            text: "Аэродром"
+            text: "Ускорение в м/с^2"
             font.pixelSize: 16
             font.family: "Arial"
         }
@@ -267,16 +120,16 @@ Item {
             }
         Rectangle{
             id:shadow23
-           x: 135
+           x: 155
            y: 25
-           width: 250
+           width: 225
            height: 20
            radius: 20
            color: "#dff5ff"
        }
         TextInput {
             id: textInput46
-            x: 140
+            x: 160
             y: 25
             width: 283
             height: 20
@@ -292,94 +145,7 @@ Item {
 
 
 
-    DropShadow
-        {
-            anchors.fill: rectangle
-            horizontalOffset: 7
-            verticalOffset: 7
-            radius: 10
-            samples: 15
-            source: rectangle
-            color: "#0d226e"
-        }
-    Rectangle {
-        id: rectangle
-        anchors.top: parent.top
-        anchors.topMargin: 500
-        anchors.left: imageback.left
-        anchors.leftMargin: 250
-        width: 400
-        height: 70
-        radius: 20
-        border.width: 0
-        color:
-                {"#e5f6fe"
-                    if (mouseArea.containsMouse)
-                    {
-                        if(mouseArea.pressed)
-                        {
-                            return "#c3d0ff"
-                        }
-                        else
-                        {
-                            colorAnim.start()
-                            return  "#e5f6fe"
-                        }
-                    }
 
-                    else
-                    {
-                        unhoverAnim.start()
-                        return "#e5f6fe"
-
-                    }
-                }
-
-
-                PropertyAnimation
-                {
-                    id: colorAnim;
-                    target: rectangle;
-                    property: "color";
-                    from:"#e5f6fe";
-                    to: "#c3d0ff";
-                    duration: 300
-                }
-
-                PropertyAnimation
-                {
-                     id: unhoverAnim;
-                     target: rectangle;
-                     property: "color";
-                     from: "#c3d0ff";
-                     to: "#e5f6fe";
-                     duration: 300
-                }
-
-
-        Text {
-            id: text1
-            x: 96
-            y: 26
-            color: "#0d226e"
-            text: qsTr("Выбрать аэродром на карте")
-            font.pixelSize: 16
-            horizontalAlignment: Text.AlignHCenter
-            font.styleName: "Regular"
-            font.family: "Arial"
-        }
-        MouseArea {
-            id: mouseArea
-            x: 0
-            y: 0
-            width: 400
-            height: 70
-            anchors.fill: parent
-                        hoverEnabled: true
-                        onClicked: rectangle.clicked()
-                        cursorShape: Qt.PointingHandCursor
-        }
-    }
     DropShadow
         {
             anchors.fill: rectangle1
@@ -393,9 +159,9 @@ Item {
     Rectangle {
         id: rectangle1
         anchors.top: parent.top
-        anchors.topMargin: 600
-        anchors.left: imageback.left
-        anchors.leftMargin: 250
+        anchors.topMargin: 400
+        anchors.left: parent.left
+        anchors.leftMargin: 0
         width: 190
         height: 70
         radius: 20
@@ -482,9 +248,9 @@ Item {
     Rectangle {
         id: rectangle2
         anchors.top: parent.top
-        anchors.topMargin: 600
-        anchors.left: imageback.left
-        anchors.leftMargin: 460
+        anchors.topMargin: 400
+        anchors.left: parent.left
+        anchors.leftMargin: 210
         width: 190
         height: 70
         radius: 20
@@ -557,8 +323,6 @@ Item {
                         cursorShape: Qt.PointingHandCursor
         }
     }
-
-
 
 
 

@@ -24,7 +24,7 @@ Window {
         Loader{
             id: button1
             anchors.top: parent.top
-            anchors.topMargin: 50
+            anchors.topMargin: 35
             x: parent.width/3
             source: "qrc:/Mainmenu.qml"
 
@@ -32,7 +32,7 @@ Window {
     Loader{
         id: proverka
         anchors.top: parent.top
-        anchors.topMargin: 50
+        anchors.topMargin: 35
         x: parent.width+20
         source: "qrc:/Buttonmain.qml"
     }

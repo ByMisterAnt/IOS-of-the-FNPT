@@ -6,5 +6,9 @@
         <file>Buttonmistake.qml</file>
         <file>Mapmain.qml</file>
         <file>Setupmain.qml</file>
+        <file>Mainmenu.qml</file>
+        <file>Speedmenu.qml</file>
+        <file>Weightmain.qml</file>
+        <file>Timemain.qml</file>
     </qresource>
 </RCC>

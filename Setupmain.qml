@@ -42,7 +42,6 @@ Item {
         width: 400
         height: 70
         color: "#e5f6fe"
-        radius: 20
         border.width: 0
 
         Text {
@@ -72,7 +71,6 @@ Item {
            y: 25
            width: 250
            height: 20
-           radius: 20
            color: "#dff5ff"
        }
         TextInput {
@@ -200,7 +198,6 @@ Item {
         width: 400
         height: 70
         color: "#e5f6fe"
-        radius: 20
         border.width: 0
         Text {
             id: text30
@@ -229,7 +226,6 @@ Item {
            y: 25
            width: 250
            height: 20
-           radius: 20
            color: "#dff5ff"
        }
         TextInput {

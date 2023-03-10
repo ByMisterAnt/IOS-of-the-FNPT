@@ -10,6 +10,7 @@ SOURCES += \
 RESOURCES += qml.qrc \
     iconresource.qrc \
     images.qrc \
+    photoplane.qrc \
     pictures.qrc
 
 TRANSLATIONS += \

@@ -145,7 +145,7 @@ MouseArea{
                      text: "Масса"
                      url: "qrc:/allicon/weight.png"
                      value: "btn4"
-                                // path: "qrc:/Buttonmistake.qml"
+                                path: "qrc:/Weightmain.qml"
                  }
                  ListElement
                  {

@@ -3,6 +3,6 @@
         <file>mainicon.png</file>
     </qresource>
     <qresource prefix="/">
-        <file>Mainmenu.qml</file>
+        <file>gfgfg.qml</file>
     </qresource>
 </RCC>

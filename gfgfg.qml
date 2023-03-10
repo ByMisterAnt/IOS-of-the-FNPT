@@ -3,53 +3,18 @@ import QtQuick.Controls 2.15
 import QtQuick.Window 2.15
 import QtQuick.Layouts 1.15
 import QtGraphicalEffects 1.12
+
 Item {
     width: parent.width*5+50
     height: parent.height+50
 
-
-
-    Image {
-        id: imageback
-        anchors.top: parent.top
-        anchors.topMargin: -50
-        anchors.left: parent.left
-        anchors.leftMargin: -20
-        width: 1350
-        height: 900
-        opacity: 0.1
-        source: "qrc:/pictures/weather.jpeg"
-        clip: false
-
-    }
-
-    Rectangle {
-        id: rectangle234
-        anchors.top: parent.top
-        anchors.topMargin: 120
-        anchors.left: parent.left
-        anchors.leftMargin: 140
-        width: 2
-        height: 550
-        opacity: 0.40
-        color: "#e5f6fe"
-    }
-
-    Loader{
-        id:podokno1
-        anchors.top: imageback
-        anchors.topMargin: 35
-        x: 300
-        source: "qrc:/Timemain.qml"
-    }
-
-    ListView{
-         id:pole12
+   ListView{
+         id:pole1
          anchors.fill: parent
          spacing:  20
-         model:polemodel1
+         model:polemodel
          delegate:
-             Item {
+             Item{
                  id: example25
                  width: 140
                  height: 140
@@ -58,8 +23,10 @@ Item {
                      visible: (btnMouse.containsMouse) ? true : false
                      anchors.fill: example25
                      gradient: Gradient{
+
                          GradientStop { position: 0.00; color: "#e5f6fe"}
-                         GradientStop { position: 0.5; color: "#10334999"}
+                         GradientStop { position: 0.5; color: "#0D226F"}
+
                      }
                  }
                  MouseArea{
@@ -70,6 +37,8 @@ Item {
                      cursorShape: Qt.PointingHandCursor
 
                  }
+
+
 
      Image {
          id: example
@@ -84,7 +53,7 @@ MouseArea{
     height: 100
     onClicked:
          {
-             podokno1.source = model.path
+             proverka.source = model.path
 }
 }
      Text {
@@ -102,46 +71,57 @@ MouseArea{
          font.family: "Arial"
          }
 
+         Rectangle {
+                 id: rectangle1
+                 anchors.horizontalCenter: parent.horizontalCenter
+                 y: 135
+                 width: 100
+                 height: 2
+                 opacity: 0.4
+                 color: "#e5f6fe"
+                 border.width: 0
+
+                 }
 }
 
 }
      ListModel{
-         id:polemodel1
+         id:polemodel
          ListElement
                  {
-                     text: "Время суток"
-                    url: "qrc:/allicon/dayandnight.png"
+                     text: "Главная"
+                    url: "qrc:/imagesresoures/mainicon.png"
                     value: "btn1"
-                                path: "qrc:/Timemain.qml"
+                                path: "qrc:/Buttonmain.qml"
 
                  }
                  ListElement
                  {
-                     text: "Ветер"
-                     url: "qrc:/allicon/wind.png"
+                     text: "Погода"
+                     url: "qrc:/allicon/environmenticon.png"
                      value: "btn2"
-                                // path: "qrc:/Buttonweather.qml"
+                                 path: "qrc:/Buttonweather.qml"
                  }
                  ListElement
                  {
-                     text: "Снег"
-                     url: "qrc:/allicon/snow.png"
+                     text: "Расположение"
+                     url: "qrc:/allicon/mapicon.png"
                      value: "btn3"
-                                 //path: "qrc:/Mapmain.qml"
+                                 path: "qrc:/Mapmain.qml"
                  }
                  ListElement
                  {
-                     text: "Дождь"
-                     url: "qrc:/allicon/rain.png"
+                     text: "Отказы"
+                     url: "qrc:/allicon/mistakeicon.png"
                      value: "btn4"
-                                // path: "qrc:/Buttonmistake.qml"
+                                 path: "qrc:/Buttonmistake.qml"
                  }
                  ListElement
                  {
-                     text: "Облака"
-                     url: "qrc:/allicon/cloud.png"
+                     text: "Настройки"
+                     url: "qrc:/allicon/setupicon.png"
                      value: "btn5"
-                                // path: "qrc:/Setupmain.qml"
+                                 path: "qrc:/Setupmain.qml"
                  }
      }
 }

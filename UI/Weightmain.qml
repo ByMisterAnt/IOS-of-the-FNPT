@@ -5,15 +5,21 @@ import QtQuick.Layouts 1.15
 import QtGraphicalEffects 1.12
 
 Item {
-    width: parent.width*5+50
-    height: parent.height+50
+    width: parent.width
+    height: parent.height
+    anchors.centerIn: parent
+
+    Image {
+            id: imageback1
+            anchors.fill: parent
+            opacity: 0.1
+            source: "qrc:/images/airplaneback.jpeg"
+            clip: false
+
+        }
 
     Image {
         id: imageback
-        anchors.top: parent.top
-        anchors.topMargin: 0
-        anchors.left: parent.left
-        anchors.leftMargin: -20
         width: 800
         height: 800
         source: "qrc:/images/airplane12.png"

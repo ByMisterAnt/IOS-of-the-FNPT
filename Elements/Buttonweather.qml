@@ -9,19 +9,6 @@ Item {
 
 
 
-    Image {
-        id: imageback
-        anchors.top: parent.top
-        anchors.topMargin: -50
-        anchors.left: parent.left
-        anchors.leftMargin: -20
-        width: 1350
-        height: 900
-        opacity: 0.1
-        source: "qrc:/images/weather.jpeg"
-        clip: false
-
-    }
 
     Rectangle {
         id: rectangle234
@@ -35,13 +22,7 @@ Item {
         color: "#e5f6fe"
     }
 
-    Loader{
-        id:podokno1
-        anchors.top: imageback
-        anchors.topMargin: 35
-        x: 300
-        source: "qrc:/UI/Timemain.qml"
-    }
+
 
     ListView{
          id:pole12
@@ -144,5 +125,7 @@ MouseArea{
                                 // path: "qrc:/Setupmain.qml"
                  }
      }
+
+
 }
 }

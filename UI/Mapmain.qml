@@ -9,19 +9,7 @@ Item {
 
 
 
-    Image {
-            id: imageback
-            anchors.top: parent.top
-            anchors.topMargin: -50
-            anchors.left: parent.left
-            anchors.leftMargin: -20
-            width: 1350
-            height: 900
-            opacity: 0.1
-            source: "qrc:/images/map.jpeg"
-            clip: false
 
-        }
     DropShadow
         {
             anchors.fill: example10

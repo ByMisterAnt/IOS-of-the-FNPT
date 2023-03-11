@@ -6,9 +6,9 @@
 
 int main(int argc, char *argv[])
 {
-    //qputenv("QSG_INFO", "1");
+    qputenv("QSG_INFO", "1");
 
-    //QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+    QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 
     QGuiApplication app(argc, argv);
 
@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 
     engine.rootContext()->setContextProperty("app", &appCore);
 
-    engine.load(splashUrl);
+    //engine.load(splashUrl);
     engine.load(url);
 
     return app.exec();

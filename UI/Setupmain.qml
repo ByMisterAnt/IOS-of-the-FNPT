@@ -4,24 +4,17 @@ import QtQuick.Window 2.15
 import QtQuick.Layouts 1.15
 import QtGraphicalEffects 1.12
 Item {
-    width: parent.width*5+50
-    height: parent.height+50
-
+    width: parent.width
+    height: parent.height
 
     Image {
             id: imageback
-            anchors.top: parent.top
-            anchors.topMargin: -50
-            anchors.left: parent.left
-            anchors.leftMargin: -20
-            width: 1350
-            height: 900
+            anchors.fill: parent
             opacity: 0.1
             source: "qrc:/images/airplaneback.jpeg"
             clip: false
 
         }
-
 
     DropShadow
         {
@@ -60,17 +53,23 @@ Item {
             font.pixelSize: 16
             font.family: "Arial"
         }
-
+        MouseArea {
+            id: mouseArea23
+            width: 265
+            height: 30
+            anchors.verticalCenter: parent.verticalCenter
+                        hoverEnabled: true
+                        onClicked: line.clicked()
+                        cursorShape: Qt.PointingHandCursor
         TextInput {
             id: textInput10
             anchors.verticalCenter: parent.verticalCenter
             maximumLength: 200
-            width: 265
-            height: 20
+            anchors.fill: parent
             color: "#0d226e"
             text: qsTr("")
-            font.pixelSize: 16
-            font.family: "Arial"     
+            font.pixelSize: 20
+            font.family: "Arial"
 
         Rectangle{
             id:line
@@ -79,16 +78,8 @@ Item {
             anchors.left: parent.left
             width: 265
             height: 3
-            MouseArea {
-                id: mouseArea23
-                anchors.bottom: parent.bottom
-                anchors.left: parent.left
-                width: 265
-                height: 20
-                            hoverEnabled: true
-                            onClicked: line.clicked()
-                            cursorShape: Qt.PointingHandCursor
-            }
+
+
             color:
                     {"#334999"
                         if (mouseArea23.containsMouse)
@@ -134,6 +125,9 @@ Item {
                     }
         }
     }
+        }
+
+
   }
 }
 

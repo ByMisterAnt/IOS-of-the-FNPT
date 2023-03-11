@@ -1,26 +1,10 @@
 import QtQuick 2.12
 import QtQuick.Controls 2.15
-import QtQuick.Window 2.15
 import QtQuick.Layouts 1.15
 import QtGraphicalEffects 1.12
 Item {
     width: parent.width*5+50
     height: parent.height+50
-
-
-
-    Image {
-        id: imageback
-        anchors.top: parent.top
-        anchors.topMargin: -50
-        anchors.left: parent.left
-        anchors.leftMargin: -20
-        width: 1350
-        height: 900
-        opacity: 0.1
-        source: "qrc:/images/airplaneback.jpeg"
-        clip: false
-}
 
 
     Rectangle {
@@ -36,13 +20,7 @@ Item {
 }
 
 
-    Loader{
-        id:podokno
-        anchors.top: imageback
-        anchors.topMargin: 35
-        x: 300
-        source: "qrc:/UI/Speedmenu.qml"
-    }
+
 
     ListView{
          id:pole12
@@ -50,7 +28,8 @@ Item {
          spacing:  20
          model:polemodel1
          delegate:
-             Item {
+             Item
+         {
                  id: example25
                  width: 140
                  height: 140
@@ -72,48 +51,54 @@ Item {
 
                  }
 
-     Image {
-         id: example
-         anchors.centerIn: example25
-         width: model.width
-         height: model.height
-         source: model.url
-MouseArea{
-    id:maousearea2
-    anchors.centerIn: example25
-    width:100
-    height: 100
-    onClicked:
-         {
-             podokno.source = model.path
-}
-}
-     Text {
-         id: text12
-         anchors.horizontalCenter: parent.horizontalCenter
-         //anchors.verticalCenter: parent.verticalCenter
-         horizontalAlignment: Text.AlignHCenter
-         anchors.top: parent.top
-         anchors.topMargin: 110
-         width: 74
-         height: 18
-         color: "#e5f6fe"
-         text: model.text
-         font.pixelSize: 16
-         font.family: "Arial"
-         }
+                 Image
+                 {
+                     id: example
+                     anchors.centerIn: example25
+                     width: model.width
+                     height: model.height
+                     source: model.url
 
-}
+                     MouseArea
+                     {
+                         id:maousearea2
+                         anchors.centerIn: example25
+                         width:100
+                         height: 100
+                         onClicked:
+                         {
+                             podokno.source = model.path
+                         }
+                     }
+                     Text
+                     {
+                         id: text12
 
-}
-     ListModel{
+                         anchors.horizontalCenter: parent.horizontalCenter
+                         //anchors.verticalCenter: parent.verticalCenter
+                         horizontalAlignment: Text.AlignHCenter
+                         anchors.top: parent.top
+                         anchors.topMargin: 110
+                         width: 74
+                         height: 18
+                         color: "#e5f6fe"
+                         text: model.text
+                         font.pixelSize: 16
+                         font.family: "Arial"
+                         }
+
+                 }
+
+          }
+     ListModel
+     {
          id:polemodel1
+
          ListElement
                  {
                      width: 120
                      height: 120
-                     text: "Автостарт
-на земле"
+                     text: "Автостарт \nна земле"
                     url: "qrc:/images/autostarte.png"
                     value: "btn1"
                                 //path: "qrc:/Buttonmain.qml"
@@ -123,8 +108,7 @@ MouseArea{
                  {
                      width: 120
                      height: 120
-                     text: "Автостарт
-в воздухе"
+                     text: "Автостарт \nв воздухе"
                      url: "qrc:/images/autostartair.png"
                      value: "btn2"
                                 // path: "qrc:/Buttonweather.qml"
@@ -136,7 +120,7 @@ MouseArea{
                      text: "Скорость"
                      url: "qrc:/images/speed.png"
                      value: "btn3"
-                                 path: "qrc:/UI/Speedmenu.qml"
+                     path: "qrc:/UI/Speedmenu.qml"
                  }
                  ListElement
                  {
@@ -145,7 +129,7 @@ MouseArea{
                      text: "Масса"
                      url: "qrc:/images/weight.png"
                      value: "btn4"
-                                path: "qrc:/UI/Weightmain.qml"
+                     path: "qrc:/UI/Weightmain.qml"
                  }
                  ListElement
                  {

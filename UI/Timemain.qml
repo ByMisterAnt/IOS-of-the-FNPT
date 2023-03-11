@@ -8,6 +8,14 @@ Item {
     width: parent.width*5+50
     height: parent.height+50
 
+    Image {
+            id: imageback
+            anchors.fill: parent
+            opacity: 0.1
+            source: "qrc:/images/weather.jpeg"
+            clip: false
+
+        }
     DropShadow
         {
             anchors.fill: example10

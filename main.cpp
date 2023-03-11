@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
     appEngine appCore;
 
     const QUrl url(QStringLiteral("qrc:/main.qml"));
-    const QUrl splashUrl(QStringLiteral("qrc:/UI/SplashScreen.qml"));
+    const QUrl splashUrl(QStringLiteral("qrc:/UI/Splashmenu.qml"));
 
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
                      &app, [url](QObject *obj, const QUrl &objUrl) {

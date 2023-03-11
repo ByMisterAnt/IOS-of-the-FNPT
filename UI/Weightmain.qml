@@ -3,25 +3,24 @@ import QtQuick.Controls 2.15
 import QtQuick.Window 2.15
 import QtQuick.Layouts 1.15
 import QtGraphicalEffects 1.12
+
 Item {
     width: parent.width*5+50
     height: parent.height+50
 
-
-
     Image {
-            id: imageback
-            anchors.top: parent.top
-            anchors.topMargin: -50
-            anchors.left: parent.left
-            anchors.leftMargin: -20
-            width: 1350
-            height: 900
-            opacity: 0.1
-            source: "qrc:/images/map.jpeg"
-            clip: false
+        id: imageback
+        anchors.top: parent.top
+        anchors.topMargin: 0
+        anchors.left: parent.left
+        anchors.leftMargin: -20
+        width: 800
+        height: 800
+        source: "qrc:/images/airplane12.png"
+        clip: false
+    }
 
-        }
+
     DropShadow
         {
             anchors.fill: example10
@@ -35,9 +34,9 @@ Item {
     Rectangle {
         id: example10
         anchors.top: parent.top
-        anchors.topMargin: 100
-        anchors.left: imageback.left
-        anchors.leftMargin: 250
+        anchors.topMargin: 30
+        anchors.left: parent.left
+        anchors.leftMargin: -100
         width: 400
         height: 70
         radius: 20
@@ -52,10 +51,10 @@ Item {
         Text {
             id: text11
             anchors.verticalCenter: parent.verticalCenter
-            width: 74
+            width:125
             height: 18
             color: "#0d226e"
-            text: "Долгота"
+            text: "Вес самолета в т"
             font.pixelSize: 16
             font.family: "Arial"
         }
@@ -64,7 +63,7 @@ Item {
             id: textInput11
             anchors.verticalCenter: parent.verticalCenter
             maximumLength: 200
-            width: 285
+            width: 210
             height: 20
             color: "#0d226e"
             text: qsTr("")
@@ -77,13 +76,13 @@ Item {
                 anchors.bottom: parent.bottom
                 anchors.bottomMargin: -3
                 anchors.left: parent.left
-                width: 265
+                width: 210
                 height: 3
                 MouseArea {
                     id: mouseArea28
                     anchors.bottom: parent.bottom
                     anchors.left: parent.left
-                    width: 265
+                    width: 210
                     height: 20
                                 hoverEnabled: true
                                 onClicked: line1.clicked()
@@ -135,7 +134,7 @@ Item {
             }
         }
     }
-  }
+}
     DropShadow
         {
             anchors.fill: example20
@@ -149,41 +148,41 @@ Item {
     Rectangle {
         id: example20
         anchors.top: parent.top
-        anchors.topMargin: 200
-        anchors.left: imageback.left
-        anchors.leftMargin: 250
+        anchors.topMargin: 30
+        anchors.left: parent.left
+        anchors.leftMargin: 460
         width: 400
         height: 70
         radius: 20
         color: "#e5f6fe"
         border.width: 0
         Row{
-            id: row1
+            id: row23
             anchors.fill: parent
             anchors.left: parent.left
             anchors.leftMargin: 10
             spacing: 15
         Text {
-            id: text22
+            id: text21
             anchors.verticalCenter: parent.verticalCenter
-            width: 74
+            width: 115
             height: 18
             color: "#0d226e"
-            text: "Широта"
+            text: "Вес топлива в т"
             font.pixelSize: 16
             font.family: "Arial"
         }
 
         TextInput {
-            id: textInput22
+            id: textInput21
             anchors.verticalCenter: parent.verticalCenter
-            width: 285
+            maximumLength: 200
+            width: 210
             height: 20
             color: "#0d226e"
             text: qsTr("")
             font.pixelSize: 16
             selectionColor: "#0d226e"
-            maximumLength: 200
             selectedTextColor: "#e5f6fe"
             font.family: "Arial"
             Rectangle{
@@ -191,13 +190,13 @@ Item {
                 anchors.bottom: parent.bottom
                 anchors.bottomMargin: -3
                 anchors.left: parent.left
-                width: 265
+                width: 210
                 height: 3
                 MouseArea {
                     id: mouseArea29
                     anchors.bottom: parent.bottom
                     anchors.left: parent.left
-                    width: 265
+                    width: 210
                     height: 20
                                 hoverEnabled: true
                                 onClicked: line2.clicked()
@@ -249,55 +248,54 @@ Item {
             }
         }
     }
- }
+}
     DropShadow
         {
-            anchors.fill: example34
+            anchors.fill: example30
             horizontalOffset: 4
             verticalOffset: 4
             radius: 10
             samples: 15
-            source: example34
+            source: example30
             color: "#0d226e"
         }
     Rectangle {
-        id: example34
+        id: example30
         anchors.top: parent.top
-        anchors.topMargin: 300
-        anchors.left: imageback.left
-        anchors.leftMargin: 250
-        width: 400
+        anchors.topMargin: 130
+        anchors.left: parent.left
+        anchors.leftMargin: 460
+        width: 200
         height: 70
         radius: 20
         color: "#e5f6fe"
         border.width: 0
         Row{
-            id: row2
+            id: row3
             anchors.fill: parent
             anchors.left: parent.left
             anchors.leftMargin: 10
             spacing: 15
         Text {
-            id: text35
+            id: text31
             anchors.verticalCenter: parent.verticalCenter
-            width: 74
+            width: 5
             height: 18
             color: "#0d226e"
-            text: "Высота в ft"
+            text: "т"
             font.pixelSize: 16
             font.family: "Arial"
         }
-
         TextInput {
-            id: textInput34
+            id: textInput31
             anchors.verticalCenter: parent.verticalCenter
-            width: 285
+            maximumLength: 100
+            width: 130
             height: 20
             color: "#0d226e"
             text: qsTr("")
             font.pixelSize: 16
             selectionColor: "#0d226e"
-            maximumLength: 200
             selectedTextColor: "#e5f6fe"
             font.family: "Arial"
             Rectangle{
@@ -305,13 +303,13 @@ Item {
                 anchors.bottom: parent.bottom
                 anchors.bottomMargin: -3
                 anchors.left: parent.left
-                width: 265
+                width: 130
                 height: 3
                 MouseArea {
                     id: mouseArea31
                     anchors.bottom: parent.bottom
                     anchors.left: parent.left
-                    width: 265
+                    width: 130
                     height: 20
                                 hoverEnabled: true
                                 onClicked: line3.clicked()
@@ -363,7 +361,7 @@ Item {
             }
         }
     }
- }
+}
     DropShadow
         {
             anchors.fill: example40
@@ -377,41 +375,41 @@ Item {
     Rectangle {
         id: example40
         anchors.top: parent.top
-        anchors.topMargin: 400
-        anchors.left: imageback.left
-        anchors.leftMargin: 250
-        width: 400
+        anchors.topMargin: 580
+        anchors.left: parent.left
+        anchors.leftMargin: 460
+        width: 200
         height: 70
         radius: 20
         color: "#e5f6fe"
         border.width: 0
         Row{
-            id: row3
+            id: row4
             anchors.fill: parent
             anchors.left: parent.left
             anchors.leftMargin: 10
             spacing: 15
         Text {
-            id: text45
+            id: text41
             anchors.verticalCenter: parent.verticalCenter
-            width: 74
+            width: 5
             height: 18
             color: "#0d226e"
-            text: "Аэродром"
+            text: "т"
             font.pixelSize: 16
             font.family: "Arial"
         }
 
         TextInput {
-            id: textInput46
+            id: textInput41
             anchors.verticalCenter: parent.verticalCenter
-            width: 285
+            maximumLength: 100
+            width: 130
             height: 20
             color: "#0d226e"
             text: qsTr("")
             font.pixelSize: 16
             selectionColor: "#0d226e"
-            maximumLength: 300
             selectedTextColor: "#e5f6fe"
             font.family: "Arial"
             Rectangle{
@@ -419,13 +417,13 @@ Item {
                 anchors.bottom: parent.bottom
                 anchors.bottomMargin: -3
                 anchors.left: parent.left
-                width: 265
+                width: 130
                 height: 3
                 MouseArea {
                     id: mouseArea32
                     anchors.bottom: parent.bottom
                     anchors.left: parent.left
-                    width: 265
+                    width: 130
                     height: 20
                                 hoverEnabled: true
                                 onClicked: line4.clicked()
@@ -478,33 +476,257 @@ Item {
         }
     }
 }
-
-
     DropShadow
         {
-            anchors.fill: rectangle
+            anchors.fill: example50
+            horizontalOffset: 4
+            verticalOffset: 4
+            radius: 10
+            samples: 15
+            source: example50
+            color: "#0d226e"
+        }
+    Rectangle {
+        id: example50
+        anchors.top: parent.top
+        anchors.topMargin: 270
+        anchors.left: parent.left
+        anchors.leftMargin: 550
+        width: 200
+        height: 70
+        radius: 20
+        color: "#e5f6fe"
+        border.width: 0
+        Row{
+            id: row5
+            anchors.fill: parent
+            anchors.left: parent.left
+            anchors.leftMargin: 10
+            spacing: 15
+        Text {
+            id: text51
+            anchors.verticalCenter: parent.verticalCenter
+            width: 5
+            height: 18
+            color: "#0d226e"
+            text: "т"
+            font.pixelSize: 16
+            font.family: "Arial"
+        }
+        TextInput {
+            id: textInput51
+            anchors.verticalCenter: parent.verticalCenter
+            maximumLength: 100
+            width: 130
+            height: 20
+            color: "#0d226e"
+            text: qsTr("")
+            font.pixelSize: 16
+            selectionColor: "#0d226e"
+            selectedTextColor: "#e5f6fe"
+            font.family: "Arial"
+            Rectangle{
+                id:line5
+                anchors.bottom: parent.bottom
+                anchors.bottomMargin: -3
+                anchors.left: parent.left
+                width: 130
+                height: 3
+                MouseArea {
+                    id: mouseArea33
+                    anchors.bottom: parent.bottom
+                    anchors.left: parent.left
+                    width: 130
+                    height: 20
+                                hoverEnabled: true
+                                onClicked: line5.clicked()
+                                cursorShape: Qt.PointingHandCursor
+                }
+                color:
+                        {"#334999"
+                            if (mouseArea33.containsMouse)
+                            {
+                                if(mouseArea33.pressed)
+                                {
+                                    return "#334999"
+                                }
+                                else
+                                {
+                                    colorAnim10.start()
+                                    return  "#334999"
+                                }
+                            }
+
+                            else
+                            {
+                                unhoverAnim10.start()
+                                return "#334999"
+
+                            }
+                        }
+
+
+                        PropertyAnimation
+                        {
+                            id: colorAnim10;
+                            target: line5;
+                            property: "color";
+                            from:"#334999";
+                            to: "#334999";
+                            duration: 300
+                        }
+
+                        PropertyAnimation
+                        {
+                             id: unhoverAnim10;
+                             target: line5;
+                             property: "color";
+                             from: "#334999";
+                             to: "#00334999";
+                             duration: 300
+                        }
+            }
+        }
+    }
+}
+    DropShadow
+        {
+            anchors.fill: example60
+            horizontalOffset: 4
+            verticalOffset: 4
+            radius: 10
+            samples: 15
+            source: example60
+            color: "#0d226e"
+        }
+    Rectangle {
+        id: example60
+        anchors.top: parent.top
+        anchors.topMargin: 270
+        anchors.left: parent.left
+        anchors.leftMargin: 10
+        width: 200
+        height: 70
+        radius: 20
+        color: "#e5f6fe"
+        border.width: 0
+        Row{
+            id: row6
+            anchors.fill: parent
+            anchors.left: parent.left
+            anchors.leftMargin: 10
+            spacing: 15
+        Text {
+            id: text61
+            anchors.verticalCenter: parent.verticalCenter
+            width: 5
+            height: 18
+            color: "#0d226e"
+            text: "т"
+            font.pixelSize: 16
+            font.family: "Arial"
+        }
+        TextInput {
+            id: textInput61
+            anchors.verticalCenter: parent.verticalCenter
+            maximumLength: 100
+            width: 130
+            height: 20
+            color: "#0d226e"
+            text: qsTr("")
+            font.pixelSize: 16
+            selectionColor: "#0d226e"
+            selectedTextColor: "#e5f6fe"
+            font.family: "Arial"
+            Rectangle{
+                id:line6
+                anchors.bottom: parent.bottom
+                anchors.bottomMargin: -3
+                anchors.left: parent.left
+                width: 130
+                height: 3
+                MouseArea {
+                    id: mouseArea34
+                    anchors.bottom: parent.bottom
+                    anchors.left: parent.left
+                    width: 130
+                    height: 20
+                                hoverEnabled: true
+                                onClicked: line6.clicked()
+                                cursorShape: Qt.PointingHandCursor
+                }
+                color:
+                        {"#334999"
+                            if (mouseArea34.containsMouse)
+                            {
+                                if(mouseArea34.pressed)
+                                {
+                                    return "#334999"
+                                }
+                                else
+                                {
+                                    colorAnim11.start()
+                                    return  "#334999"
+                                }
+                            }
+
+                            else
+                            {
+                                unhoverAnim11.start()
+                                return "#334999"
+
+                            }
+                        }
+
+
+                        PropertyAnimation
+                        {
+                            id: colorAnim11;
+                            target: line6;
+                            property: "color";
+                            from:"#334999";
+                            to: "#334999";
+                            duration: 300
+                        }
+
+                        PropertyAnimation
+                        {
+                             id: unhoverAnim11;
+                             target: line6;
+                             property: "color";
+                             from: "#334999";
+                             to: "#00334999";
+                             duration: 300
+                        }
+            }
+        }
+    }
+}
+    DropShadow
+        {
+            anchors.fill: rectangle70
             horizontalOffset: 7
             verticalOffset: 7
             radius: 10
             samples: 15
-            source: rectangle
+            source: rectangle70
             color: "#0d226e"
         }
     Rectangle {
-        id: rectangle
+        id: rectangle70
         anchors.top: parent.top
-        anchors.topMargin: 500
-        anchors.left: imageback.left
-        anchors.leftMargin: 250
-        width: 400
+        anchors.topMargin: 700
+        anchors.left: parent.left
+        anchors.leftMargin: -100
+        width: 190
         height: 70
         radius: 20
         border.width: 0
         color:
                 {"#e5f6fe"
-                    if (mouseArea.containsMouse)
+                    if (mouseArea70.containsMouse)
                     {
-                        if(mouseArea.pressed)
+                        if(mouseArea70.pressed)
                         {
                             return "#c3d0ff"
                         }
@@ -527,7 +749,7 @@ Item {
                 PropertyAnimation
                 {
                     id: colorAnim;
-                    target: rectangle;
+                    target: rectangle70;
                     property: "color";
                     from:"#e5f6fe";
                     to: "#c3d0ff";
@@ -537,7 +759,7 @@ Item {
                 PropertyAnimation
                 {
                      id: unhoverAnim;
-                     target: rectangle;
+                     target: rectangle70;
                      property: "color";
                      from: "#c3d0ff";
                      to: "#e5f6fe";
@@ -546,96 +768,8 @@ Item {
 
 
         Text {
-            id: text1
-            x: 96
-            y: 26
-            color: "#0d226e"
-            text: qsTr("Выбрать аэродром на карте")
-            font.pixelSize: 16
-            horizontalAlignment: Text.AlignHCenter
-            font.styleName: "Regular"
-            font.family: "Arial"
-        }
-        MouseArea {
-            id: mouseArea
-            x: 0
-            y: 0
-            width: 400
-            height: 70
-            anchors.fill: parent
-                        hoverEnabled: true
-                        onClicked: rectangle.clicked()
-                        cursorShape: Qt.PointingHandCursor
-        }
-    }
-    DropShadow
-        {
-            anchors.fill: rectangle1
-            horizontalOffset: 7
-            verticalOffset: 7
-            radius: 10
-            samples: 15
-            source: rectangle1
-            color: "#0d226e"
-        }
-    Rectangle {
-        id: rectangle1
-        anchors.top: parent.top
-        anchors.topMargin: 600
-        anchors.left: imageback.left
-        anchors.leftMargin: 250
-        width: 190
-        height: 70
-        radius: 20
-        border.width: 0
-        color:
-                {"#e5f6fe"
-                    if (mouseArea1.containsMouse)
-                    {
-                        if(mouseArea1.pressed)
-                        {
-                            return "#c3d0ff"
-                        }
-                        else
-                        {
-                            colorAnim2.start()
-                            return  "#e5f6fe"
-                        }
-                    }
-
-                    else
-                    {
-                        unhoverAnim2.start()
-                        return "#e5f6fe"
-
-                    }
-                }
-
-
-                PropertyAnimation
-                {
-                    id: colorAnim2;
-                    target: rectangle1;
-                    property: "color";
-                    from:"#e5f6fe";
-                    to: "#c3d0ff";
-                    duration: 300
-                }
-
-                PropertyAnimation
-                {
-                     id: unhoverAnim2;
-                     target: rectangle1;
-                     property: "color";
-                     from: "#c3d0ff";
-                     to: "#e5f6fe";
-                     duration: 300
-                }
-
-
-        Text {
-            id: text2
-            x: 59
+            id: text70
+            x: 55
             y: 26
             color: "#0d226e"
             text: qsTr("Обновить")
@@ -644,44 +778,46 @@ Item {
             font.styleName: "Regular"
             font.family: "Arial"
         }
+
         MouseArea {
-            id: mouseArea1
+            id: mouseArea70
             x: 0
             y: 0
             width: 190
             height: 70
             anchors.fill: parent
                         hoverEnabled: true
-                        onClicked: rectangle1.clicked()
+                        onClicked: rectangle70.clicked()
                         cursorShape: Qt.PointingHandCursor
         }
     }
+
+
     DropShadow
         {
-            anchors.fill: rectangle2
+            anchors.fill: rectangle80
             horizontalOffset: 7
             verticalOffset: 7
             radius: 10
             samples: 15
-            source: rectangle2
+            source: rectangle80
             color: "#0d226e"
         }
-
     Rectangle {
-        id: rectangle2
+        id: rectangle80
         anchors.top: parent.top
-        anchors.topMargin: 600
-        anchors.left: imageback.left
-        anchors.leftMargin: 460
+        anchors.topMargin: 700
+        anchors.left: parent.left
+        anchors.leftMargin: 110
         width: 190
         height: 70
         radius: 20
         border.width: 0
         color:
                 {"#e5f6fe"
-                    if (mouseArea2.containsMouse)
+                    if (mouseArea80.containsMouse)
                     {
-                        if(mouseArea2.pressed)
+                        if(mouseArea80.pressed)
                         {
                             return "#c3d0ff"
                         }
@@ -704,7 +840,7 @@ Item {
                 PropertyAnimation
                 {
                     id: colorAnim1;
-                    target: rectangle2;
+                    target: rectangle80;
                     property: "color";
                     from:"#e5f6fe";
                     to: "#c3d0ff";
@@ -714,7 +850,7 @@ Item {
                 PropertyAnimation
                 {
                      id: unhoverAnim1;
-                     target: rectangle2;
+                     target: rectangle80;
                      property: "color";
                      from: "#c3d0ff";
                      to: "#e5f6fe";
@@ -723,7 +859,7 @@ Item {
 
 
         Text {
-            id: text3
+            id: text80
             x: 55
             y: 26
             color: "#0d226e"
@@ -733,26 +869,17 @@ Item {
             font.styleName: "Regular"
             font.family: "Arial"
         }
+
         MouseArea {
-            id: mouseArea2
+            id: mouseArea80
             x: 0
             y: 0
             width: 190
             height: 70
             anchors.fill: parent
                         hoverEnabled: true
-                        onClicked:
-                        {
-                            app.sendToFG("http://127.0.0.1:8000/json/position/altitude-ft", textInput34.text);
-                            rectangle2.clicked()
-                        }
+                        onClicked: rectangle80.clicked()
                         cursorShape: Qt.PointingHandCursor
         }
-
     }
-
-
-
-
-
 }

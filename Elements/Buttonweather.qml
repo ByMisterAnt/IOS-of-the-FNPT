@@ -1,149 +1,148 @@
 import QtQuick 2.12
 import QtQuick.Controls 2.15
-import QtQuick.Layouts 1.2
-
+import QtQuick.Window 2.15
+import QtQuick.Layouts 1.15
+import QtGraphicalEffects 1.12
 Item {
     width: parent.width*5+50
     height: parent.height+50
 
 
+
     Image {
         id: imageback
-        x: -50
-        y: -50
+        anchors.top: parent.top
+        anchors.topMargin: -50
+        anchors.left: parent.left
+        anchors.leftMargin: -20
         width: 1350
         height: 900
         opacity: 0.1
-        source: "qrc:/pictures/weather.jpeg"
+        source: "qrc:/images/weather.jpeg"
         clip: false
 
     }
-    Image {
-        id: dayandnighticon
-        x: 10
-        y: 0
-        source: "qrc:/allicon/dayandnight.png"
-        sourceSize.height: 80
-        sourceSize.width: 80
-        fillMode: Image.PreserveAspectFit
-    }
-
-    Text {
-        id: text1
-        x: 10
-        y: 85
-        color: "#e5f6fe"
-        text: "Время суток"
-        font.pixelSize: 14
-        horizontalAlignment: Text.AlignHCenter
-        styleColor: "#e5f6fe"
-        font.weight: Font.Light
-        font.family: "Arial"
-    }
-
-    Image {
-        id: windicon
-        x: 10
-        y: 135
-        source: "qrc:/allicon/wind.png"
-        fillMode: Image.PreserveAspectFit
-        sourceSize.height: 80
-        sourceSize.width: 80
-    }
-
-    Text {
-        id: text2
-        x: 27
-        y: 220
-        color: "#e5f6fe"
-        text: "Ветер"
-        font.pixelSize: 14
-        horizontalAlignment: Text.AlignHCenter
-        styleColor: "#e5f6fe"
-        font.weight: Font.Light
-        font.family: "Arial"
-    }
-
-    Image {
-        id: snowicon
-        x: 10
-        y: 270
-        source: "qrc:/allicon/snow.png"
-        fillMode: Image.PreserveAspectFit
-        sourceSize.height: 80
-        sourceSize.width: 80
-    }
-
-    Text {
-        id: text3
-        x: 31
-        y: 355
-        color: "#e5f6fe"
-        text: "Снег"
-        font.pixelSize: 14
-        horizontalAlignment: Text.AlignHCenter
-        styleColor: "#e5f6fe"
-        font.weight: Font.Light
-        font.family: "Arial"
-    }
-
-    Image {
-        id: rainicon
-        x: 10
-        y: 405
-        source: "qrc:/allicon/rain.png"
-        fillMode: Image.PreserveAspectFit
-        sourceSize.height: 80
-        sourceSize.width: 80
-    }
-
-    Text {
-        id: text4
-        x: 25
-        y: 490
-        color: "#e5f6fe"
-        text: "Дождь"
-        font.pixelSize: 14
-        horizontalAlignment: Text.AlignHCenter
-        styleColor: "#e5f6fe"
-        font.weight: Font.Light
-        font.family: "Arial"
-    }
-
-
-    Image {
-        id: cloudicon
-        x: 10
-        y: 540
-        source: "qrc:/allicon/cloud.png"
-        fillMode: Image.PreserveAspectFit
-        sourceSize.height: 80
-        sourceSize.width: 80
-    }
-
-
-
-
-    Text {
-        id: text5
-        x: 22
-        y: 625
-        color: "#e5f6fe"
-        text: "Облака"
-        font.pixelSize: 14
-        horizontalAlignment: Text.AlignHCenter
-        styleColor: "#e5f6fe"
-        font.weight: Font.Light
-        font.family: "Arial"
-    }
 
     Rectangle {
-        id: rectangle
-        x: 120
-        y: 55
+        id: rectangle234
+        anchors.top: parent.top
+        anchors.topMargin: 120
+        anchors.left: parent.left
+        anchors.leftMargin: 140
         width: 2
         height: 550
         opacity: 0.40
         color: "#e5f6fe"
     }
+
+    Loader{
+        id:podokno1
+        anchors.top: imageback
+        anchors.topMargin: 35
+        x: 300
+        source: "qrc:/UI/Timemain.qml"
+    }
+
+    ListView{
+         id:pole12
+         anchors.fill: parent
+         spacing:  20
+         model:polemodel1
+         delegate:
+             Item {
+                 id: example25
+                 width: 140
+                 height: 140
+
+                 RadialGradient{
+                     visible: (btnMouse.containsMouse) ? true : false
+                     anchors.fill: example25
+                     gradient: Gradient{
+                         GradientStop { position: 0.00; color: "#e5f6fe"}
+                         GradientStop { position: 0.5; color: "#10334999"}
+                     }
+                 }
+                 MouseArea{
+                     id:btnMouse
+                     anchors.fill: parent
+                     hoverEnabled: true
+                     onClicked: example25.clicked()
+                     cursorShape: Qt.PointingHandCursor
+
+                 }
+
+     Image {
+         id: example
+         anchors.centerIn: example25
+         width: 100
+         height: 100
+         source: model.url
+MouseArea{
+    id:maousearea2
+    anchors.centerIn: example25
+    width:100
+    height: 100
+    onClicked:
+         {
+             podokno1.source = model.path
+}
+}
+     Text {
+         id: text12
+         anchors.horizontalCenter: parent.horizontalCenter
+         //anchors.verticalCenter: parent.verticalCenter
+         horizontalAlignment: Text.AlignHCenter
+         anchors.bottom: parent.bottom
+         anchors.bottomMargin: -25
+         width: 74
+         height: 18
+         color: "#e5f6fe"
+         text: model.text
+         font.pixelSize: 16
+         font.family: "Arial"
+         }
+
+}
+
+}
+     ListModel{
+         id:polemodel1
+         ListElement
+                 {
+                     text: "Время суток"
+                    url: "qrc:/images/dayandnight.png"
+                    value: "btn1"
+                                path: "qrc:/UI/Timemain.qml"
+
+                 }
+                 ListElement
+                 {
+                     text: "Ветер"
+                     url: "qrc:/images/wind.png"
+                     value: "btn2"
+                                // path: "qrc:/Buttonweather.qml"
+                 }
+                 ListElement
+                 {
+                     text: "Снег"
+                     url: "qrc:/images/snow.png"
+                     value: "btn3"
+                                 //path: "qrc:/Mapmain.qml"
+                 }
+                 ListElement
+                 {
+                     text: "Дождь"
+                     url: "qrc:/images/rain.png"
+                     value: "btn4"
+                                // path: "qrc:/Buttonmistake.qml"
+                 }
+                 ListElement
+                 {
+                     text: "Облака"
+                     url: "qrc:/images/cloud.png"
+                     value: "btn5"
+                                // path: "qrc:/Setupmain.qml"
+                 }
+     }
+}
 }

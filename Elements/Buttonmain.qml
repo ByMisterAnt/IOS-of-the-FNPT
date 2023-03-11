@@ -1,7 +1,8 @@
 import QtQuick 2.12
 import QtQuick.Controls 2.15
-import QtQuick.Layouts 1.2
-
+import QtQuick.Window 2.15
+import QtQuick.Layouts 1.15
+import QtGraphicalEffects 1.12
 Item {
     width: parent.width*5+50
     height: parent.height+50
@@ -10,146 +11,153 @@ Item {
 
     Image {
         id: imageback
-        x: -50
-        y: -50
+        anchors.top: parent.top
+        anchors.topMargin: -50
+        anchors.left: parent.left
+        anchors.leftMargin: -20
         width: 1350
         height: 900
         opacity: 0.1
-        source: "qrc:/pictures/airplaneback.jpeg"
+        source: "qrc:/images/airplaneback.jpeg"
         clip: false
+}
 
-    }
-
-    Image {
-        id: autostarteiicon
-        x: 0
-        y: -10
-        source: "qrc:/allicon/autostarte.png"
-        sourceSize.height: 100
-        sourceSize.width: 100
-        fillMode: Image.PreserveAspectFit
-    }
-
-    Text {
-        id: text1
-        x: 17
-        y: 85
-        color: "#e5f6fe"
-        text: "Автостарт"
-        font.pixelSize: 14
-        horizontalAlignment: Text.AlignHCenter
-        styleColor: "#e5f6fe"
-        font.weight: Font.Light
-        font.family: "Arial"
-    }
-
-    Image {
-        id: aurostartairicon
-        x: 0
-        y: 120
-        source: "qrc:/allicon/autostartair.png"
-        fillMode: Image.PreserveAspectFit
-        sourceSize.height: 100
-        sourceSize.width: 100
-    }
-
-    Text {
-        id: text2
-        x: 13
-        y: 220
-        width: 77
-        height: 37
-        color: "#e5f6fe"
-        text: "Автостарт\nв воздухе"
-        font.pixelSize: 14
-        horizontalAlignment: Text.AlignHCenter
-        styleColor: "#e5f6fe"
-        font.weight: Font.Light
-        font.family: "Arial"
-    }
-
-    Image {
-        id: speedicon
-        x: 10
-        y: 270
-        source: "qrc:/allicon/speed.png"
-        fillMode: Image.PreserveAspectFit
-        sourceSize.height: 80
-        sourceSize.width: 80
-    }
-
-    Text {
-        id: text3
-        x: 21
-        y: 355
-        color: "#e5f6fe"
-        text: "Скорость"
-        font.pixelSize: 14
-        horizontalAlignment: Text.AlignHCenter
-        styleColor: "#e5f6fe"
-        font.weight: Font.Light
-        font.family: "Arial"
-    }
-
-    Image {
-        id: weighticon
-        x: 10
-        y: 405
-        source: "qrc:/allicon/weight.png"
-        fillMode: Image.PreserveAspectFit
-        sourceSize.height: 80
-        sourceSize.width: 80
-    }
-
-    Text {
-        id: text4
-        x: 29
-        y: 490
-        color: "#e5f6fe"
-        text: "Масса"
-        font.pixelSize: 14
-        horizontalAlignment: Text.AlignHCenter
-        styleColor: "#e5f6fe"
-        font.weight: Font.Light
-        font.family: "Arial"
-    }
-
-
-    Image {
-        id: playicon
-        x: 10
-        y: 540
-        source: "qrc:/allicon/play.png"
-        fillMode: Image.PreserveAspectFit
-        sourceSize.height: 80
-        sourceSize.width: 80
-    }
-
-
-
-
-    Text {
-        id: text5
-        x: 15
-        y: 625
-        color: "#e5f6fe"
-        text: "Заморозка"
-        font.pixelSize: 14
-        horizontalAlignment: Text.AlignHCenter
-        styleColor: "#e5f6fe"
-        font.weight: Font.Light
-        font.family: "Arial"
-    }
 
     Rectangle {
-        id: rectangle
-        x: 120
-        y: 55
+        id: rectangle234
+        anchors.top: parent.top
+        anchors.topMargin: 120
+        anchors.left: parent.left
+        anchors.leftMargin: 140
         width: 2
         height: 550
         opacity: 0.40
         color: "#e5f6fe"
+}
+
+
+    Loader{
+        id:podokno
+        anchors.top: imageback
+        anchors.topMargin: 35
+        x: 300
+        source: "qrc:/UI/Speedmenu.qml"
     }
+
+    ListView{
+         id:pole12
+         anchors.fill: parent
+         spacing:  20
+         model:polemodel1
+         delegate:
+             Item {
+                 id: example25
+                 width: 140
+                 height: 140
+
+                 RadialGradient{
+                     visible: (btnMouse.containsMouse) ? true : false
+                     anchors.fill: example25
+                     gradient: Gradient{
+                         GradientStop { position: 0.00; color: "#e5f6fe"}
+                         GradientStop { position: 0.5; color: "#10334999"}
+                     }
+                 }
+                 MouseArea{
+                     id:btnMouse
+                     anchors.fill: parent
+                     hoverEnabled: true
+                     onClicked: example25.clicked()
+                     cursorShape: Qt.PointingHandCursor
+
+                 }
+
+     Image {
+         id: example
+         anchors.centerIn: example25
+         width: model.width
+         height: model.height
+         source: model.url
+MouseArea{
+    id:maousearea2
+    anchors.centerIn: example25
+    width:100
+    height: 100
+    onClicked:
+         {
+             podokno.source = model.path
+}
+}
+     Text {
+         id: text12
+         anchors.horizontalCenter: parent.horizontalCenter
+         //anchors.verticalCenter: parent.verticalCenter
+         horizontalAlignment: Text.AlignHCenter
+         anchors.top: parent.top
+         anchors.topMargin: 110
+         width: 74
+         height: 18
+         color: "#e5f6fe"
+         text: model.text
+         font.pixelSize: 16
+         font.family: "Arial"
+         }
+
+}
+
+}
+     ListModel{
+         id:polemodel1
+         ListElement
+                 {
+                     width: 120
+                     height: 120
+                     text: "Автостарт
+на земле"
+                    url: "qrc:/images/autostarte.png"
+                    value: "btn1"
+                                //path: "qrc:/Buttonmain.qml"
+
+                 }
+                 ListElement
+                 {
+                     width: 120
+                     height: 120
+                     text: "Автостарт
+в воздухе"
+                     url: "qrc:/images/autostartair.png"
+                     value: "btn2"
+                                // path: "qrc:/Buttonweather.qml"
+                 }
+                 ListElement
+                 {
+                     width: 100
+                     height: 100
+                     text: "Скорость"
+                     url: "qrc:/images/speed.png"
+                     value: "btn3"
+                                 path: "qrc:/UI/Speedmenu.qml"
+                 }
+                 ListElement
+                 {
+                     width: 100
+                     height: 100
+                     text: "Масса"
+                     url: "qrc:/images/weight.png"
+                     value: "btn4"
+                                path: "qrc:/UI/Weightmain.qml"
+                 }
+                 ListElement
+                 {
+                     width: 100
+                     height: 100
+                     text: "Заморозка"
+                     url: "qrc:/images/play.png"
+                     value: "btn5"
+                                // path: "qrc:/Setupmain.qml"
+                 }
+     }
+}
 
 
 }

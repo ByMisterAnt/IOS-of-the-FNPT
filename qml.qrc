@@ -1,14 +1,15 @@
 <RCC>
     <qresource prefix="/">
-        <file>main.qml</file>
-        <file>Elements/CustomButton.qml</file>
-        <file>UI/MainScreen.qml</file>
-        <file>Elements/Buttonmistake.qml</file>
         <file>Elements/Buttonmain.qml</file>
+        <file>Elements/Buttonmistake.qml</file>
         <file>Elements/Buttonweather.qml</file>
-        <file>UI/Mainmenu.qml</file>
+        <file>Elements/Mainmenu.qml</file>
         <file>UI/Mapmain.qml</file>
         <file>UI/Setupmain.qml</file>
-        <file>UI/SplashScreen.qml</file>
+        <file>UI/Speedmenu.qml</file>
+        <file>UI/Timemain.qml</file>
+        <file>UI/Weightmain.qml</file>
+        <file>main.qml</file>
+        <file>UI/Splashmenu.qml</file>
     </qresource>
 </RCC>

@@ -3,46 +3,18 @@ import QtQuick.Controls 2.15
 import QtQuick.Window 2.15
 import QtQuick.Layouts 1.15
 import QtGraphicalEffects 1.12
+
 Item {
     width: parent.width*5+50
     height: parent.height+50
 
-
-
-    Image {
-        id: imageback
-        anchors.top: parent.top
-        anchors.topMargin: -50
-        anchors.left: parent.left
-        anchors.leftMargin: -20
-        width: 1350
-        height: 900
-        opacity: 0.1
-        source: "qrc:/images/airplaneback.jpeg"
-        clip: false
-
-    }
-
-    Rectangle {
-        id: rectangle234
-        anchors.top: parent.top
-        anchors.topMargin: 120
-        anchors.left: parent.left
-        anchors.leftMargin: 140
-        width: 2
-        height: 550
-        opacity: 0.40
-        color: "#e5f6fe"
-    }
-
-    ListView{
-         id:pole12
+   ListView{
+         id:pole1
          anchors.fill: parent
          spacing:  20
-         model:polemodel1
+         model:polemodel
          delegate:
-
-             Item {
+             Item{
                  id: example25
                  width: 140
                  height: 140
@@ -51,8 +23,10 @@ Item {
                      visible: (btnMouse.containsMouse) ? true : false
                      anchors.fill: example25
                      gradient: Gradient{
+
                          GradientStop { position: 0.00; color: "#e5f6fe"}
-                         GradientStop { position: 0.5; color: "#10334999"}
+                         GradientStop { position: 0.5; color: "#0D226F"}
+
                      }
                  }
                  MouseArea{
@@ -63,6 +37,8 @@ Item {
                      cursorShape: Qt.PointingHandCursor
 
                  }
+
+
 
      Image {
          id: example
@@ -77,7 +53,7 @@ MouseArea{
     height: 100
     onClicked:
          {
-             //proverka.source = model.path
+             proverka.source = model.path
 }
 }
      Text {
@@ -95,27 +71,58 @@ MouseArea{
          font.family: "Arial"
          }
 
+         Rectangle {
+                 id: rectangle1
+                 anchors.horizontalCenter: parent.horizontalCenter
+                 y: 135
+                 width: 100
+                 height: 2
+                 opacity: 0.4
+                 color: "#e5f6fe"
+                 border.width: 0
+
+                 }
 }
 
 }
      ListModel{
-         id:polemodel1
+         id:polemodel
          ListElement
                  {
-                     text: "Отказы"
-                    url: "qrc:/images/mictake.png"
+                     text: "Главная"
+                    url: "qrc:/images/mainicon.png"
                     value: "btn1"
-                                //path: "qrc:/Buttonmain.qml"
+                                path: "qrc:/Elements/Buttonmain.qml"
 
                  }
                  ListElement
                  {
-                     text: "Графики"
-                     url: "qrc:/images/graffic.png"
+                     text: "Погода"
+                     url: "qrc:/images/environmenticon.png"
                      value: "btn2"
-                                // path: "qrc:/Buttonweather.qml"
+                                 path: "qrc:/Elements/Buttonweather.qml"
                  }
-
+                 ListElement
+                 {
+                     text: "Расположение"
+                     url: "qrc:/images/mapicon.png"
+                     value: "btn3"
+                                 path: "qrc:/UI/Mapmain.qml"
+                 }
+                 ListElement
+                 {
+                     text: "Отказы"
+                     url: "qrc:/images/mistakeicon.png"
+                     value: "btn4"
+                                 path: "qrc:/Elements/Buttonmistake.qml"
+                 }
+                 ListElement
+                 {
+                     text: "Настройки"
+                     url: "qrc:/images/setupicon.png"
+                     value: "btn5"
+                                 path: "qrc:/UI/Setupmain.qml"
+                 }
      }
 }
 }

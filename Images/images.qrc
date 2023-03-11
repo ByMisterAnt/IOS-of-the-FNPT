@@ -1,0 +1,28 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>environmenticon.png</file>
+        <file>airplane12.png</file>
+        <file>airplaneback.jpeg</file>
+        <file>autostartair.png</file>
+        <file>autostarte.png</file>
+        <file>cloud.png</file>
+        <file>dayandnight.png</file>
+        <file>fire.png</file>
+        <file>graffic.png</file>
+        <file>mai.svg</file>
+        <file>mainicon.png</file>
+        <file>map.jpeg</file>
+        <file>mapicon.png</file>
+        <file>mictake.png</file>
+        <file>mistakeicon.png</file>
+        <file>play.png</file>
+        <file>rain.png</file>
+        <file>setupicon.png</file>
+        <file>snow.png</file>
+        <file>speed.png</file>
+        <file>sunny.png</file>
+        <file>weather.jpeg</file>
+        <file>weight.png</file>
+        <file>wind.png</file>
+    </qresource>
+</RCC>

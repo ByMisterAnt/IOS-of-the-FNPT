@@ -1,45 +1,59 @@
-import QtQuick 2.15
-import QtQuick.Window 2.15
+import QtQuick 2.12
+import QtQuick.Window 2.12
 import QtQuick.Controls 2.15
-import QtQuick.Layouts 1.15
-
 
 Window {
     id: mainUI
-
     width: 1280
-    height: 640
-    visible: false
+    height: 720
+
+    visible: true//false
+    color: "#334999"
     title: qsTr("IOS")
+    // Пересчёт независимых от плотности пикселей в физические пиксели устройства
+   readonly property int dpi: Screen.pixelDensity * 25.4
+       function dp(x){ return (dpi < 120) ? x : x*(dpi/160); }
 
-    Loader
-        {
-            id: mainLoader
 
-            anchors.fill: parent
 
-            source: "qrc:/UI/MainScreen.qml"
-        }
+    Rectangle {
+        id: mainrectangle
+        //anchors.top: parent
+        //anchors.left: parent
+        width: parent.width/6
+        height: parent.height
+        color: "#0D226F"
+        Loader{
+            id: button1
+            anchors.top: parent.top
+            anchors.topMargin: 35
+            x: parent.width/3
+            source: "qrc:/Elements/Mainmenu.qml"
 
-    Loader
-        {
-            id: mainLoader2
-
-            x: 250
-            width: parent.width / 2
-            height: parent.height
-
-            source: "qrc:/Elements/Buttonmistake.qml"
-        }
-
+     }
+    Loader{
+        id: proverka
+        anchors.top: parent.top
+        anchors.topMargin: 35
+        x: parent.width+20
+        source: "qrc:/Elements/Buttonmain.qml"
+    }
     Connections
     {
         target: app
 
         function onOpenMain()
         {
+            //mainUI.visible = showFullScreen();
             mainUI.visible = true;
+
         }
     }
+
 }
+
+}
+
+
+
 

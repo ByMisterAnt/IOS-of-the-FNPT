@@ -215,7 +215,11 @@ Item {
             height: 70
             anchors.fill: parent
                         hoverEnabled: true
-                        onClicked: rectangle20.clicked()
+                        onClicked:
+                        {
+                            app.setIpPort("http://"+textInput10.text+":"+textInput30.text)
+                            rectangle20.clicked()
+                        }
                         cursorShape: Qt.PointingHandCursor
         }
     }

@@ -716,7 +716,7 @@ Item {
                         hoverEnabled: true
                         onClicked:
                         {
-                            app.sendToFG("http://127.0.0.1:8000/json/position/altitude-ft", textInput34.text);
+                            app.sendToFG("/json/position/altitude-ft", textInput34.text);
                             rectangle2.clicked()
                         }
                         cursorShape: Qt.PointingHandCursor

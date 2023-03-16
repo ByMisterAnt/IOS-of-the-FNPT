@@ -22,6 +22,7 @@ public:
     void megaPrintFunction(std::string text);
 
     QString str;
+    QString ip_port;
 
 signals:
 
@@ -32,6 +33,7 @@ public slots:
 
     void printFromQml(QString areaText);
     void sendToFG(QString addr, QString value);
+    void setIpPort(QString ipport);
 
 private:
     QNetworkAccessManager *mgr;

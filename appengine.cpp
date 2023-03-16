@@ -18,11 +18,15 @@ void appEngine::printFromQml(QString areaText)
     str = areaText;
     emit sendToQml("мега сообщение");
 }
+void appEngine::setIpPort(QString ipport)
+{
+    ip_port = ipport;
+}
 
 void appEngine::sendToFG(QString addr, QString value)
 {
     mgr = new QNetworkAccessManager(this);
-    const QUrl url(addr);
+    const QUrl url(ip_port+addr);
     QNetworkRequest request(url);
     request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
 

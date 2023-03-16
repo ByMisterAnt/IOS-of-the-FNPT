@@ -7,7 +7,7 @@ import QtGraphicalEffects 1.12
 Item {
     width: parent.width
     height: parent.height
-    anchors.centerIn: parent
+    //anchors.centerIn: parent
 
     Image {
             id: imageback1
@@ -20,6 +20,7 @@ Item {
 
     Image {
         id: imageback
+        anchors.centerIn: parent
         width: 800
         height: 800
         source: "qrc:/images/airplane12.png"
@@ -39,10 +40,10 @@ Item {
         }
     Rectangle {
         id: example10
-        anchors.top: parent.top
-        anchors.topMargin: 30
-        anchors.left: parent.left
-        anchors.leftMargin: -100
+        anchors.top: imageback.top
+        anchors.topMargin: 70
+        anchors.left: imageback.left
+        anchors.leftMargin: -50
         width: 400
         height: 70
         radius: 20
@@ -64,36 +65,32 @@ Item {
             font.pixelSize: 16
             font.family: "Arial"
         }
+        MouseArea {
+            id: mouseArea28
+            anchors.verticalCenter: parent.verticalCenter
+            width: 210
+            height: 30
+                        hoverEnabled: true
+                        onClicked: line1.clicked()
+                        cursorShape: Qt.PointingHandCursor
 
         TextInput {
             id: textInput11
             anchors.verticalCenter: parent.verticalCenter
+            anchors.fill: parent
             maximumLength: 200
-            width: 210
-            height: 20
             color: "#0d226e"
             text: qsTr("")
             font.pixelSize: 16
-            selectionColor: "#0d226e"
-            selectedTextColor: "#e5f6fe"
             font.family: "Arial"
             Rectangle{
                 id:line1
                 anchors.bottom: parent.bottom
-                anchors.bottomMargin: -3
+                anchors.bottomMargin: 5
                 anchors.left: parent.left
                 width: 210
                 height: 3
-                MouseArea {
-                    id: mouseArea28
-                    anchors.bottom: parent.bottom
-                    anchors.left: parent.left
-                    width: 210
-                    height: 20
-                                hoverEnabled: true
-                                onClicked: line1.clicked()
-                                cursorShape: Qt.PointingHandCursor
-                }
+
                 color:
                         {"#334999"
                             if (mouseArea28.containsMouse)
@@ -139,6 +136,7 @@ Item {
                         }
             }
         }
+        }
     }
 }
     DropShadow
@@ -153,10 +151,10 @@ Item {
         }
     Rectangle {
         id: example20
-        anchors.top: parent.top
-        anchors.topMargin: 30
-        anchors.left: parent.left
-        anchors.leftMargin: 460
+        anchors.top: imageback.top
+        anchors.topMargin: 70
+        anchors.right: imageback.right
+        anchors.rightMargin: -50
         width: 400
         height: 70
         radius: 20
@@ -178,36 +176,32 @@ Item {
             font.pixelSize: 16
             font.family: "Arial"
         }
+        MouseArea {
+            id: mouseArea29
+            anchors.verticalCenter: parent.verticalCenter
+            width: 210
+            height: 30
+                        hoverEnabled: true
+                        onClicked: line2.clicked()
+                        cursorShape: Qt.PointingHandCursor
 
         TextInput {
             id: textInput21
             anchors.verticalCenter: parent.verticalCenter
+            anchors.fill: parent
             maximumLength: 200
-            width: 210
-            height: 20
             color: "#0d226e"
             text: qsTr("")
             font.pixelSize: 16
-            selectionColor: "#0d226e"
-            selectedTextColor: "#e5f6fe"
             font.family: "Arial"
             Rectangle{
                 id:line2
                 anchors.bottom: parent.bottom
-                anchors.bottomMargin: -3
+                anchors.bottomMargin: 5
                 anchors.left: parent.left
                 width: 210
                 height: 3
-                MouseArea {
-                    id: mouseArea29
-                    anchors.bottom: parent.bottom
-                    anchors.left: parent.left
-                    width: 210
-                    height: 20
-                                hoverEnabled: true
-                                onClicked: line2.clicked()
-                                cursorShape: Qt.PointingHandCursor
-                }
+
                 color:
                         {"#334999"
                             if (mouseArea29.containsMouse)
@@ -253,6 +247,7 @@ Item {
                         }
             }
         }
+        }
     }
 }
     DropShadow
@@ -267,10 +262,10 @@ Item {
         }
     Rectangle {
         id: example30
-        anchors.top: parent.top
-        anchors.topMargin: 130
-        anchors.left: parent.left
-        anchors.leftMargin: 460
+        anchors.top: imageback.top
+        anchors.topMargin: 170
+        anchors.right: imageback.right
+        anchors.rightMargin: 150
         width: 200
         height: 70
         radius: 20
@@ -292,35 +287,32 @@ Item {
             font.pixelSize: 16
             font.family: "Arial"
         }
+        MouseArea {
+            id: mouseArea31
+            anchors.verticalCenter: parent.verticalCenter
+            width: 130
+            height: 30
+                        hoverEnabled: true
+                        onClicked: line3.clicked()
+                        cursorShape: Qt.PointingHandCursor
+
         TextInput {
             id: textInput31
             anchors.verticalCenter: parent.verticalCenter
+            anchors.fill: parent
             maximumLength: 100
-            width: 130
-            height: 20
             color: "#0d226e"
             text: qsTr("")
             font.pixelSize: 16
-            selectionColor: "#0d226e"
-            selectedTextColor: "#e5f6fe"
             font.family: "Arial"
             Rectangle{
                 id:line3
                 anchors.bottom: parent.bottom
-                anchors.bottomMargin: -3
+                anchors.bottomMargin: 5
                 anchors.left: parent.left
                 width: 130
                 height: 3
-                MouseArea {
-                    id: mouseArea31
-                    anchors.bottom: parent.bottom
-                    anchors.left: parent.left
-                    width: 130
-                    height: 20
-                                hoverEnabled: true
-                                onClicked: line3.clicked()
-                                cursorShape: Qt.PointingHandCursor
-                }
+
                 color:
                         {"#334999"
                             if (mouseArea31.containsMouse)
@@ -366,6 +358,7 @@ Item {
                         }
             }
         }
+        }
     }
 }
     DropShadow
@@ -380,10 +373,10 @@ Item {
         }
     Rectangle {
         id: example40
-        anchors.top: parent.top
-        anchors.topMargin: 580
-        anchors.left: parent.left
-        anchors.leftMargin: 460
+        anchors.bottom: imageback.bottom
+        anchors.bottomMargin: 175
+        anchors.right: imageback.right
+        anchors.rightMargin: 150
         width: 200
         height: 70
         radius: 20
@@ -405,36 +398,32 @@ Item {
             font.pixelSize: 16
             font.family: "Arial"
         }
+        MouseArea {
+            id: mouseArea32
+            width: 130
+            height: 30
+            anchors.verticalCenter: parent.verticalCenter
+                        hoverEnabled: true
+                        onClicked: line4.clicked()
+                        cursorShape: Qt.PointingHandCursor
 
         TextInput {
             id: textInput41
             anchors.verticalCenter: parent.verticalCenter
+            anchors.fill: parent
             maximumLength: 100
-            width: 130
-            height: 20
             color: "#0d226e"
             text: qsTr("")
             font.pixelSize: 16
-            selectionColor: "#0d226e"
-            selectedTextColor: "#e5f6fe"
             font.family: "Arial"
             Rectangle{
                 id:line4
                 anchors.bottom: parent.bottom
-                anchors.bottomMargin: -3
+                anchors.bottomMargin: 5
                 anchors.left: parent.left
                 width: 130
                 height: 3
-                MouseArea {
-                    id: mouseArea32
-                    anchors.bottom: parent.bottom
-                    anchors.left: parent.left
-                    width: 130
-                    height: 20
-                                hoverEnabled: true
-                                onClicked: line4.clicked()
-                                cursorShape: Qt.PointingHandCursor
-                }
+
                 color:
                         {"#334999"
                             if (mouseArea32.containsMouse)
@@ -480,6 +469,7 @@ Item {
                         }
             }
         }
+        }
     }
 }
     DropShadow
@@ -494,10 +484,10 @@ Item {
         }
     Rectangle {
         id: example50
-        anchors.top: parent.top
-        anchors.topMargin: 270
-        anchors.left: parent.left
-        anchors.leftMargin: 550
+        anchors.top: imageback.top
+        anchors.topMargin: 300
+        anchors.right: imageback.right
+        anchors.rightMargin: -50
         width: 200
         height: 70
         radius: 20
@@ -519,35 +509,32 @@ Item {
             font.pixelSize: 16
             font.family: "Arial"
         }
+        MouseArea {
+            id: mouseArea33
+            width: 130
+            height: 30
+            anchors.verticalCenter: parent.verticalCenter
+                        hoverEnabled: true
+                        onClicked: line5.clicked()
+                        cursorShape: Qt.PointingHandCursor
+
         TextInput {
             id: textInput51
             anchors.verticalCenter: parent.verticalCenter
+            anchors.fill: parent
             maximumLength: 100
-            width: 130
-            height: 20
             color: "#0d226e"
             text: qsTr("")
             font.pixelSize: 16
-            selectionColor: "#0d226e"
-            selectedTextColor: "#e5f6fe"
             font.family: "Arial"
             Rectangle{
                 id:line5
                 anchors.bottom: parent.bottom
-                anchors.bottomMargin: -3
+                anchors.bottomMargin: 5
                 anchors.left: parent.left
                 width: 130
                 height: 3
-                MouseArea {
-                    id: mouseArea33
-                    anchors.bottom: parent.bottom
-                    anchors.left: parent.left
-                    width: 130
-                    height: 20
-                                hoverEnabled: true
-                                onClicked: line5.clicked()
-                                cursorShape: Qt.PointingHandCursor
-                }
+
                 color:
                         {"#334999"
                             if (mouseArea33.containsMouse)
@@ -593,6 +580,7 @@ Item {
                         }
             }
         }
+        }
     }
 }
     DropShadow
@@ -607,10 +595,10 @@ Item {
         }
     Rectangle {
         id: example60
-        anchors.top: parent.top
-        anchors.topMargin: 270
-        anchors.left: parent.left
-        anchors.leftMargin: 10
+        anchors.top: imageback.top
+        anchors.topMargin: 300
+        anchors.left: imageback.left
+        anchors.leftMargin: -50
         width: 200
         height: 70
         radius: 20
@@ -632,35 +620,32 @@ Item {
             font.pixelSize: 16
             font.family: "Arial"
         }
+        MouseArea {
+            id: mouseArea34
+            width: 130
+            height: 30
+            anchors.verticalCenter: parent.verticalCenter
+                        hoverEnabled: true
+                        onClicked: line6.clicked()
+                        cursorShape: Qt.PointingHandCursor
+
         TextInput {
             id: textInput61
             anchors.verticalCenter: parent.verticalCenter
+            anchors.fill: parent
             maximumLength: 100
-            width: 130
-            height: 20
             color: "#0d226e"
             text: qsTr("")
             font.pixelSize: 16
-            selectionColor: "#0d226e"
-            selectedTextColor: "#e5f6fe"
             font.family: "Arial"
             Rectangle{
                 id:line6
                 anchors.bottom: parent.bottom
-                anchors.bottomMargin: -3
+                anchors.bottomMargin: 5
                 anchors.left: parent.left
                 width: 130
                 height: 3
-                MouseArea {
-                    id: mouseArea34
-                    anchors.bottom: parent.bottom
-                    anchors.left: parent.left
-                    width: 130
-                    height: 20
-                                hoverEnabled: true
-                                onClicked: line6.clicked()
-                                cursorShape: Qt.PointingHandCursor
-                }
+
                 color:
                         {"#334999"
                             if (mouseArea34.containsMouse)
@@ -706,8 +691,12 @@ Item {
                         }
             }
         }
+        }
     }
 }
+
+
+
     DropShadow
         {
             anchors.fill: rectangle70
@@ -720,10 +709,10 @@ Item {
         }
     Rectangle {
         id: rectangle70
-        anchors.top: parent.top
-        anchors.topMargin: 700
-        anchors.left: parent.left
-        anchors.leftMargin: -100
+        anchors.bottom: imageback.bottom
+        anchors.bottomMargin: 25
+        anchors.left: imageback.left
+        anchors.leftMargin: -50
         width: 190
         height: 70
         radius: 20
@@ -797,8 +786,6 @@ Item {
                         cursorShape: Qt.PointingHandCursor
         }
     }
-
-
     DropShadow
         {
             anchors.fill: rectangle80
@@ -811,10 +798,10 @@ Item {
         }
     Rectangle {
         id: rectangle80
-        anchors.top: parent.top
-        anchors.topMargin: 700
-        anchors.left: parent.left
-        anchors.leftMargin: 110
+        anchors.bottom: imageback.bottom
+        anchors.bottomMargin: 25
+        anchors.left: imageback.left
+        anchors.leftMargin: 160
         width: 190
         height: 70
         radius: 20

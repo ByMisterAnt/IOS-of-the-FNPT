@@ -29,10 +29,9 @@ Item {
         }
     Rectangle {
         id: example34
-        anchors.top: parent.top
-        anchors.topMargin: 200
-        anchors.left: parent.left
-        anchors.leftMargin: 0
+        anchors.top: example40.top
+        anchors.topMargin: -100
+        anchors.horizontalCenter: parent.horizontalCenter
         width: 400
         height: 70
         radius: 20
@@ -54,33 +53,32 @@ Item {
             font.pixelSize: 16
             font.family: "Arial"
         }
-        TextInput {
-            //id: textInput34
-            width: 232
-            height: 20
+        MouseArea {
+            id: mouseArea27
             anchors.verticalCenter: parent.verticalCenter
+            width: 200
+            height: 30
+                        hoverEnabled: true
+                        onClicked: line.clicked()
+                        cursorShape: Qt.PointingHandCursor
+
+        TextInput {
+            id: textInput34
+            anchors.verticalCenter: parent.verticalCenter
+            anchors.fill: parent
             color: "#0d226e"
-            maximumLength: 300
+            maximumLength: 200
             font.pixelSize: 16
             text: qsTr("")
             font.family: "Arial"
             Rectangle{
                 id:line
                 anchors.bottom: parent.bottom
-                anchors.bottomMargin: -3
+                anchors.bottomMargin: 5
                 anchors.left: parent.left
                 width: 200
                 height: 3
-                MouseArea {
-                    id: mouseArea27
-                    anchors.bottom: parent.bottom
-                    anchors.left: parent.left
-                    width: 200
-                    height: 20
-                                hoverEnabled: true
-                                onClicked: line.clicked()
-                                cursorShape: Qt.PointingHandCursor
-                }
+
                 color:
                         {"#334999"
                             if (mouseArea27.containsMouse)
@@ -127,6 +125,7 @@ Item {
             }
         }
         }
+        }
     }
 
 
@@ -142,10 +141,7 @@ Item {
         }
     Rectangle {
         id: example40
-        anchors.top: parent.top
-        anchors.topMargin: 300
-        anchors.left: parent.left
-        anchors.leftMargin: 0
+        anchors.centerIn: parent
         width: 400
         height: 70
         radius: 20
@@ -167,34 +163,32 @@ Item {
             font.pixelSize: 16
             font.family: "Arial"
         }
+        MouseArea {
+            id: mouseArea28
+            anchors.verticalCenter: parent.verticalCenter
+            width: 200
+            height: 30
+                        hoverEnabled: true
+                        onClicked: line1.clicked()
+                        cursorShape: Qt.PointingHandCursor
 
         TextInput {
-            //id: textInput34
-            width: 232
-            height: 20
+            id: textInput36
+            anchors.fill: parent
             anchors.verticalCenter: parent.verticalCenter
             color: "#0d226e"
-            maximumLength: 300
+            maximumLength: 200
             font.pixelSize: 16
             text: qsTr("")
             font.family: "Arial"
             Rectangle{
                 id:line1
                 anchors.bottom: parent.bottom
-                anchors.bottomMargin: -3
+                anchors.bottomMargin: 5
                 anchors.left: parent.left
                 width: 200
                 height: 3
-                MouseArea {
-                    id: mouseArea28
-                    anchors.bottom: parent.bottom
-                    anchors.left: parent.left
-                    width: 200
-                    height: 20
-                                hoverEnabled: true
-                                onClicked: line1.clicked()
-                                cursorShape: Qt.PointingHandCursor
-                }
+
                 color:
                         {"#334999"
                             if (mouseArea28.containsMouse)
@@ -240,6 +234,7 @@ Item {
                         }
             }
         }
+        }
     }
 }
 
@@ -257,10 +252,9 @@ Item {
         }
     Rectangle {
         id: rectangle1
-        anchors.top: parent.top
-        anchors.topMargin: 400
-        anchors.left: parent.left
-        anchors.leftMargin: 0
+        anchors.bottom: example40.bottom
+        anchors.bottomMargin: -100
+        anchors.left: example40.left
         width: 190
         height: 70
         radius: 20
@@ -346,10 +340,9 @@ Item {
 
     Rectangle {
         id: rectangle2
-        anchors.top: parent.top
-        anchors.topMargin: 400
-        anchors.left: parent.left
-        anchors.leftMargin: 210
+        anchors.bottom: example40.bottom
+        anchors.bottomMargin: -100
+        anchors.right: example40.right
         width: 190
         height: 70
         radius: 20

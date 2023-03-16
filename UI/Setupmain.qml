@@ -28,10 +28,9 @@ Item {
         }
     Rectangle {
         id: example10
-        anchors.top: parent.top
-        anchors.topMargin: 100
-        anchors.left: imageback.left
-        anchors.leftMargin: 250
+        anchors.top: example30.top
+        anchors.topMargin: -100
+        anchors.horizontalCenter: parent.horizontalCenter
         width: 400
         height: 70
         radius: 20
@@ -68,13 +67,13 @@ Item {
             anchors.fill: parent
             color: "#0d226e"
             text: qsTr("")
-            font.pixelSize: 20
+            font.pixelSize: 16
             font.family: "Arial"
 
         Rectangle{
             id:line
             anchors.bottom: parent.bottom
-            anchors.bottomMargin: -3
+            anchors.bottomMargin: 5
             anchors.left: parent.left
             width: 265
             height: 3
@@ -144,10 +143,9 @@ Item {
         }
     Rectangle {
         id: rectangle20
-        anchors.top: parent.top
-        anchors.topMargin: 300
-        anchors.left: imageback.left
-        anchors.leftMargin: 250
+        anchors.bottom: example30.bottom
+        anchors.bottomMargin: -100
+        anchors.left: example30.left
         width: 190
         height: 70
         radius: 20
@@ -236,10 +234,7 @@ Item {
         }
     Rectangle {
         id: example30
-        anchors.top: parent.top
-        anchors.topMargin: 200
-        anchors.left: imageback.left
-        anchors.leftMargin: 250
+        anchors.centerIn: parent
         width: 400
         height: 70
         radius: 20
@@ -261,11 +256,19 @@ Item {
             font.pixelSize: 16
             font.family: "Arial"
         }
+        MouseArea {
+            id: mouseArea24
+            width: 265
+            height: 30
+            anchors.verticalCenter: parent.verticalCenter
+                        hoverEnabled: true
+                        onClicked: line1.clicked()
+                        cursorShape: Qt.PointingHandCursor
+
         TextInput {
             id: textInput30
             anchors.verticalCenter: parent.verticalCenter
-            width: 265
-            height: 20
+            anchors.fill: parent
             color: "#0d226e"
             text: qsTr("")
             font.pixelSize: 16
@@ -274,20 +277,11 @@ Item {
             Rectangle{
                 id:line1
                 anchors.bottom: parent.bottom
-                anchors.bottomMargin: -3
+                anchors.bottomMargin: 5
                 anchors.left: parent.left
                 width: 265
                 height: 3
-                MouseArea {
-                    id: mouseArea24
-                    anchors.bottom: parent.bottom
-                    anchors.left: parent.left
-                    width: 265
-                    height: 20
-                                hoverEnabled: true
-                                onClicked: line1.clicked()
-                                cursorShape: Qt.PointingHandCursor
-                }
+
                 color:
                         {"#334999"
                             if (mouseArea24.containsMouse)
@@ -332,6 +326,7 @@ Item {
                              duration: 300
                         }
             }
+        }
         }
     }
 }

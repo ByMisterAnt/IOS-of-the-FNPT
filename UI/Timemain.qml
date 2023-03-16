@@ -5,8 +5,8 @@ import QtQuick.Layouts 1.15
 import QtGraphicalEffects 1.12
 
 Item {
-    width: parent.width*5+50
-    height: parent.height+50
+    width: parent.width
+    height: parent.height
 
     Image {
             id: imageback
@@ -14,8 +14,9 @@ Item {
             opacity: 0.1
             source: "qrc:/images/weather.jpeg"
             clip: false
-
         }
+
+
     DropShadow
         {
             anchors.fill: example10
@@ -28,10 +29,9 @@ Item {
         }
     Rectangle {
         id: example10
-        anchors.top: parent.top
-        anchors.topMargin: 200
-        anchors.left: parent.left
-        anchors.leftMargin: 0
+        anchors.top: rectangle1.top
+        anchors.topMargin: -100
+        anchors.horizontalCenter: parent.horizontalCenter
         width: 400
         height: 70
         radius: 20
@@ -46,42 +46,39 @@ Item {
         Text {
             id: text11
             anchors.verticalCenter: parent.verticalCenter
-            width: 74
+            width: 70
             height: 18
             color: "#0d226e"
             text: "Время"
             font.pixelSize: 16
             font.family: "Arial"
         }
+        MouseArea {
+            id: mouseArea28
+            anchors.verticalCenter: parent.verticalCenter
+            width: 265
+            height: 30
+                        hoverEnabled: true
+                        onClicked: line1.clicked()
+                        cursorShape: Qt.PointingHandCursor
+
         TextInput {
             id: textInput11
             anchors.verticalCenter: parent.verticalCenter
+            anchors.fill: parent
             maximumLength: 200
-            width: 285
-            height: 20
             color: "#0d226e"
             text: qsTr("")
             font.pixelSize: 16
-            selectionColor: "#0d226e"
-            selectedTextColor: "#e5f6fe"
             font.family: "Arial"
             Rectangle{
                 id:line1
                 anchors.bottom: parent.bottom
-                anchors.bottomMargin: -3
+                anchors.bottomMargin: 5
                 anchors.left: parent.left
                 width: 265
                 height: 3
-                MouseArea {
-                    id: mouseArea28
-                    anchors.bottom: parent.bottom
-                    anchors.left: parent.left
-                    width: 265
-                    height: 20
-                                hoverEnabled: true
-                                onClicked: line1.clicked()
-                                cursorShape: Qt.PointingHandCursor
-                }
+
                 color:
                         {"#334999"
                             if (mouseArea28.containsMouse)
@@ -127,6 +124,7 @@ Item {
                         }
             }
         }
+        }
     }
 }
     DropShadow
@@ -141,10 +139,7 @@ Item {
         }
     Rectangle {
         id: rectangle1
-        anchors.top: parent.top
-        anchors.topMargin: 300
-        anchors.left: parent.left
-        anchors.leftMargin: 0
+        anchors.centerIn: parent
         width: 400
         height: 70
         radius: 20
@@ -230,10 +225,9 @@ Item {
         }
     Rectangle {
         id: rectangle2
-        anchors.top: parent.top
-        anchors.topMargin: 400
-        anchors.left: parent.left
-        anchors.leftMargin: 0
+        anchors.bottom: rectangle1.bottom
+        anchors.bottomMargin: -100
+        anchors.left: rectangle1.left
         width: 190
         height: 70
         radius: 20
@@ -319,10 +313,9 @@ Item {
 
     Rectangle {
         id: rectangle3
-        anchors.top: parent.top
-        anchors.topMargin: 400
-        anchors.left: parent.left
-        anchors.leftMargin: 210
+        anchors.bottom: rectangle1.bottom
+        anchors.bottomMargin: -100
+        anchors.right: rectangle1.right
         width: 190
         height: 70
         radius: 20
@@ -408,10 +401,9 @@ Item {
         }
     Rectangle {
         id: rectangle4
-        anchors.top: parent.top
-        anchors.topMargin: 500
-        anchors.left: parent.left
-        anchors.leftMargin: 0
+        anchors.bottom: rectangle1.bottom
+        anchors.bottomMargin: -200
+        anchors.left: rectangle1.left
         width: 190
         height: 70
         radius: 20
@@ -497,10 +489,9 @@ Item {
 
     Rectangle {
         id: rectangle5
-        anchors.top: parent.top
-        anchors.topMargin: 500
-        anchors.left: parent.left
-        anchors.leftMargin: 210
+        anchors.bottom: rectangle1.bottom
+        anchors.bottomMargin: -200
+        anchors.right: rectangle1.right
         width: 190
         height: 70
         radius: 20
@@ -573,4 +564,5 @@ Item {
                         cursorShape: Qt.PointingHandCursor
         }
     }
+
 }

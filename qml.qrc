@@ -11,5 +11,10 @@
         <file>UI/Weightmain.qml</file>
         <file>main.qml</file>
         <file>UI/Splashmenu.qml</file>
+        <file>UI/Buttonmenu.qml</file>
+        <file>UI/Mainmenu.qml</file>
+        <file>UI/MainScreen.qml</file>
+        <file>UI/txt</file>
+        <file>UI/SplashScreen.qml</file>
     </qresource>
 </RCC>

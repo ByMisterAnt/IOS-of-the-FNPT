@@ -25,7 +25,6 @@ void appEngine::setIpPort(QString ipport)
 
 void appEngine::sendToFG(QString addr, QString value)
 {
-    mgr = new QNetworkAccessManager(this);
     const QUrl url(ip_port+addr);
     QNetworkRequest request(url);
     request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
@@ -34,7 +33,5 @@ void appEngine::sendToFG(QString addr, QString value)
     obj["value"] = QString(value);
     QJsonDocument doc(obj);
     QByteArray data = doc.toJson();
-    mgr->post(request, data);
+    mgr.post(request, data);
 }
-
-

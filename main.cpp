@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 
     engine.rootContext()->setContextProperty("app", &appCore);
 
-    //engine.load(splashUrl);
+    engine.load(splashUrl);
     engine.load(url);
 
     return app.exec();

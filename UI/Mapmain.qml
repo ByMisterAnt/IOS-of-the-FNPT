@@ -717,6 +717,8 @@ Item {
                         onClicked:
                         {
                             app.sendToFG("/json/position/altitude-ft", textInput34.text);
+                            app.sendToFG("/json/position/latitude-deg", textInput22.text);
+                            app.sendToFG("/json/position/longitude-deg", textInput11.text);
                             rectangle2.clicked()
                         }
                         cursorShape: Qt.PointingHandCursor

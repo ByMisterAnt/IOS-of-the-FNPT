@@ -29,10 +29,10 @@ Item {
     Rectangle {
         id: example10
         anchors.top: example30.top
-        anchors.topMargin: -100
+        anchors.topMargin: -120
         anchors.horizontalCenter: parent.horizontalCenter
-        width: 400
-        height: 70
+        width: 480
+        height: 80
         radius: 20
         color: "#e5f6fe"
         border.width: 0
@@ -45,16 +45,16 @@ Item {
         Text {
             id: text10
            anchors.verticalCenter: parent.verticalCenter
-            width: 70
-            height: 18
+            width: 105
+            height: 20
             color: "#0d226e"
-            text: "IP адресс"
-            font.pixelSize: 16
+            text: "   IP адресс"
+            font.pixelSize: 20
             font.family: "Arial"
         }
         MouseArea {
             id: mouseArea23
-            width: 265
+            width: 300
             height: 30
             anchors.verticalCenter: parent.verticalCenter
                         hoverEnabled: true
@@ -62,12 +62,14 @@ Item {
                         cursorShape: Qt.PointingHandCursor
         TextInput {
             id: textInput10
-            anchors.verticalCenter: parent.verticalCenter
+            //anchors.verticalCenter: parent.verticalCenter
+            anchors.top: example10.top
+            anchors.topMargin: 5
             maximumLength: 200
             anchors.fill: parent
             color: "#0d226e"
             text: qsTr("")
-            font.pixelSize: 16
+            font.pixelSize: 20
             font.family: "Arial"
 
         Rectangle{
@@ -75,7 +77,7 @@ Item {
             anchors.bottom: parent.bottom
             anchors.bottomMargin: 5
             anchors.left: parent.left
-            width: 265
+            width: 300
             height: 3
 
 
@@ -144,10 +146,10 @@ Item {
     Rectangle {
         id: rectangle20
         anchors.bottom: example30.bottom
-        anchors.bottomMargin: -100
+        anchors.bottomMargin: -120
         anchors.left: example30.left
-        width: 190
-        height: 70
+        width: 200
+        height: 80
         radius: 20
         border.width: 0
         color:
@@ -197,11 +199,12 @@ Item {
 
         Text {
             id: text20
-            x: 55
-            y: 26
+            anchors.centerIn: rectangle20
+            width: 100
+            height: 20
             color: "#0d226e"
             text: qsTr("Отправить")
-            font.pixelSize: 16
+            font.pixelSize: 20
             horizontalAlignment: Text.AlignHCenter
             font.styleName: "Regular"
             font.family: "Arial"
@@ -211,8 +214,8 @@ Item {
             id: mouseArea20
             x: 0
             y: 0
-            width: 190
-            height: 70
+            width: 210
+            height: 80
             anchors.fill: parent
                         hoverEnabled: true
                         onClicked:
@@ -239,8 +242,8 @@ Item {
     Rectangle {
         id: example30
         anchors.centerIn: parent
-        width: 400
-        height: 70
+        width: 480
+        height: 80
         radius: 20
         color: "#e5f6fe"
         border.width: 0
@@ -253,16 +256,16 @@ Item {
         Text {
             id: text30
             anchors.verticalCenter: parent.verticalCenter
-            width: 70
-            height: 18
+            width: 105
+            height: 20
             color: "#0d226e"
-            text: "Порт"
-            font.pixelSize: 16
+            text: "   Порт"
+            font.pixelSize: 20
             font.family: "Arial"
         }
         MouseArea {
             id: mouseArea24
-            width: 265
+            width: 300
             height: 30
             anchors.verticalCenter: parent.verticalCenter
                         hoverEnabled: true
@@ -271,11 +274,13 @@ Item {
 
         TextInput {
             id: textInput30
-            anchors.verticalCenter: parent.verticalCenter
+            //anchors.verticalCenter: parent.verticalCenter
+            anchors.top: example30.top
+            anchors.topMargin: 5
             anchors.fill: parent
             color: "#0d226e"
             text: qsTr("")
-            font.pixelSize: 16
+            font.pixelSize: 20
             maximumLength: 200
             font.family: "Arial"
             Rectangle{
@@ -283,7 +288,7 @@ Item {
                 anchors.bottom: parent.bottom
                 anchors.bottomMargin: 5
                 anchors.left: parent.left
-                width: 265
+                width: 300
                 height: 3
 
                 color:

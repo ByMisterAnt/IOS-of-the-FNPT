@@ -29,9 +29,13 @@ void appEngine::sendToFG(QString addr, QString value)
     QNetworkRequest request(url);
     request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
 
-    QJsonObject obj;
-    obj["value"] = QString(value);
-    QJsonDocument doc(obj);
-    QByteArray data = doc.toJson();
-    mgr.post(request, data);
+    if (value!="")
+    {
+        QJsonObject obj;
+        obj["value"] = QString(value);
+        QJsonDocument doc(obj);
+        QByteArray data = doc.toJson();
+        mgr.post(request, data);
+    }
+
 }

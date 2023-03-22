@@ -19,63 +19,64 @@ Item {
     DropShadow
         {
             anchors.fill: example10
-            horizontalOffset: 4
-            verticalOffset: 4
-            radius: 10
-            samples: 15
+            horizontalOffset: 6
+            verticalOffset: 6
+            radius: 15
+            samples: 22
             source: example10
             color: "#0d226e"
         }
     Rectangle {
         id: example10
         anchors.top: example34.top
-        anchors.topMargin: -200
-        width: 400
-        height: 70
+        anchors.topMargin: -300
+        width: 600
+        height: 100
         anchors.horizontalCenter: parent.horizontalCenter
-        radius: 20
+        radius: 30
         color: "#e5f6fe"
         border.width: 0
         Row{
             id: row
             anchors.fill: parent
             anchors.left: parent.left
-            anchors.leftMargin: 10
-            spacing: 15
+            anchors.leftMargin: 20
+            spacing: 22
         Text {
             id: text11
             anchors.verticalCenter: parent.verticalCenter
-            width: 70
-            height: 18
+            width: 155
+            height: 30
             color: "#0d226e"
             text: "Долгота"
-            font.pixelSize: 16
+            font.pixelSize: 30
             font.family: "Arial"
         }
         MouseArea {
             id: mouseArea28
-            width: 265
-            height: 30
+            width: 345
+            height: 45
             anchors.verticalCenter: parent.verticalCenter
                         hoverEnabled: true
                         onClicked: line1.clicked()
                         cursorShape: Qt.PointingHandCursor
         TextInput {
             id: textInput11
-            anchors.verticalCenter: parent.verticalCenter
+            anchors.top: example10.top
+            anchors.topMargin: 9
             anchors.fill: parent
             maximumLength: 200
             color: "#0d226e"
             text: qsTr("")
-            font.pixelSize: 16
+            font.pixelSize: 30
             font.family: "Arial"
             Rectangle{
                 id:line1
                 anchors.bottom: parent.bottom
                 anchors.bottomMargin: 5
                 anchors.left: parent.left
-                width: 265
-                height: 3
+                width: 345
+                height: 5
 
                 color:
                         {"#334999"
@@ -128,43 +129,43 @@ Item {
     DropShadow
         {
             anchors.fill: example20
-            horizontalOffset: 4
-            verticalOffset: 4
-            radius: 10
-            samples: 15
+            horizontalOffset: 6
+            verticalOffset: 6
+            radius: 15
+            samples: 22
             source: example20
             color: "#0d226e"
         }
     Rectangle {
         id: example20
         anchors.top: example34.top
-        anchors.topMargin: -100
-        width: 400
-        height: 70
+        anchors.topMargin: -150
+        width: 600
+        height: 100
         anchors.horizontalCenter: parent.horizontalCenter
-        radius: 20
+        radius: 30
         color: "#e5f6fe"
         border.width: 0
         Row{
             id: row1
             anchors.fill: parent
             anchors.left: parent.left
-            anchors.leftMargin: 10
-            spacing: 15
+            anchors.leftMargin: 20
+            spacing: 22
         Text {
             id: text22
             anchors.verticalCenter: parent.verticalCenter
-            width: 74
-            height: 18
+            width: 155
+            height: 30
             color: "#0d226e"
             text: "Широта"
-            font.pixelSize: 16
+            font.pixelSize: 30
             font.family: "Arial"
         }
         MouseArea {
             id: mouseArea29
-            width: 265
-            height: 30
+            width: 345
+            height: 45
             anchors.verticalCenter: parent.verticalCenter
                         hoverEnabled: true
                         onClicked: line2.clicked()
@@ -172,11 +173,12 @@ Item {
 
         TextInput {
             id: textInput22
-            anchors.verticalCenter: parent.verticalCenter
+            anchors.top: example20.top
+            anchors.topMargin: 9
             anchors.fill: parent
             color: "#0d226e"
             text: qsTr("")
-            font.pixelSize: 16
+            font.pixelSize: 30
             maximumLength: 200
             font.family: "Arial"
             Rectangle{
@@ -184,8 +186,8 @@ Item {
                 anchors.bottom: parent.bottom
                 anchors.bottomMargin: 5
                 anchors.left: parent.left
-                width: 265
-                height: 3
+                width: 345
+                height: 5
 
                 color:
                         {"#334999"
@@ -238,41 +240,41 @@ Item {
     DropShadow
         {
             anchors.fill: example34
-            horizontalOffset: 4
-            verticalOffset: 4
-            radius: 10
-            samples: 15
+            horizontalOffset: 6
+            verticalOffset: 6
+            radius: 15
+            samples: 22
             source: example34
             color: "#0d226e"
         }
     Rectangle {
         id: example34
         anchors.centerIn: parent
-        width: 400
-        height: 70
-        radius: 20
+        width: 600
+        height: 100
+        radius: 30
         color: "#e5f6fe"
         border.width: 0
         Row{
             id: row2
             anchors.fill: parent
             anchors.left: parent.left
-            anchors.leftMargin: 10
-            spacing: 15
+            anchors.leftMargin: 20
+            spacing: 22
         Text {
             id: text35
             anchors.verticalCenter: parent.verticalCenter
-            width: 75
-            height: 18
+            width: 155
+            height: 30
             color: "#0d226e"
             text: "Высота в ft"
-            font.pixelSize: 16
+            font.pixelSize: 30
             font.family: "Arial"
         }
         MouseArea {
             id: mouseArea31
-            width: 265
-            height: 30
+            width: 345
+            height: 45
             anchors.verticalCenter: parent.verticalCenter
                         hoverEnabled: true
                         onClicked: line3.clicked()
@@ -280,11 +282,12 @@ Item {
 
         TextInput {
             id: textInput34
-            anchors.verticalCenter: parent.verticalCenter
+            anchors.top: example34.top
+            anchors.topMargin: 9
             anchors.fill: parent
             color: "#0d226e"
             text: qsTr("")
-            font.pixelSize: 16
+            font.pixelSize: 30
             maximumLength: 200
             font.family: "Arial"
             Rectangle{
@@ -292,8 +295,8 @@ Item {
                 anchors.bottom: parent.bottom
                 anchors.bottomMargin: 5
                 anchors.left: parent.left
-                width: 265
-                height: 3
+                width: 345
+                height: 5
 
                 color:
                         {"#334999"
@@ -346,43 +349,43 @@ Item {
     DropShadow
         {
             anchors.fill: example40
-            horizontalOffset: 4
-            verticalOffset: 4
-            radius: 10
-            samples: 15
+            horizontalOffset: 6
+            verticalOffset: 6
+            radius: 15
+            samples: 22
             source: example40
             color: "#0d226e"
         }
     Rectangle {
         id: example40
         anchors.bottom: example34.bottom
-        anchors.bottomMargin: -100
-        width: 400
-        height: 70
+        anchors.bottomMargin: -150
+        width: 600
+        height: 100
         anchors.horizontalCenter: parent.horizontalCenter
-        radius: 20
+        radius: 30
         color: "#e5f6fe"
         border.width: 0
         Row{
             id: row3
             anchors.fill: parent
             anchors.left: parent.left
-            anchors.leftMargin: 10
-            spacing: 15
+            anchors.leftMargin: 20
+            spacing: 22
         Text {
             id: text45
             anchors.verticalCenter: parent.verticalCenter
-            width: 74
-            height: 18
+            width: 155
+            height: 30
             color: "#0d226e"
             text: "Аэродром"
-            font.pixelSize: 16
+            font.pixelSize: 30
             font.family: "Arial"
         }
         MouseArea {
             id: mouseArea32
-            width: 265
-            height: 30
+            width: 345
+            height: 45
             anchors.verticalCenter: parent.verticalCenter
                         hoverEnabled: true
                         onClicked: line4.clicked()
@@ -390,11 +393,12 @@ Item {
 
         TextInput {
             id: textInput46
-            anchors.verticalCenter: parent.verticalCenter
+            anchors.top: example40.top
+            anchors.topMargin: 9
             anchors.fill: parent
             color: "#0d226e"
             text: qsTr("")
-            font.pixelSize: 16
+            font.pixelSize: 30
             maximumLength: 200
             font.family: "Arial"
             Rectangle{
@@ -402,8 +406,8 @@ Item {
                 anchors.bottom: parent.bottom
                 anchors.bottomMargin: 5
                 anchors.left: parent.left
-                width: 265
-                height: 3
+                width: 345
+                height: 5
 
                 color:
                         {"#334999"
@@ -458,21 +462,21 @@ Item {
     DropShadow
         {
             anchors.fill: rectangle
-            horizontalOffset: 7
-            verticalOffset: 7
-            radius: 10
-            samples: 15
+            horizontalOffset: 10
+            verticalOffset: 10
+            radius: 15
+            samples: 22
             source: rectangle
             color: "#0d226e"
         }
     Rectangle {
         id: rectangle
         anchors.bottom: example34.bottom
-        anchors.bottomMargin: -200
-        width: 400
-        height: 70
+        anchors.bottomMargin: -300
+        width: 600
+        height: 100
         anchors.horizontalCenter: parent.horizontalCenter
-        radius: 20
+        radius: 30
         border.width: 0
         color:
                 {"#e5f6fe"
@@ -521,11 +525,10 @@ Item {
 
         Text {
             id: text1
-            x: 96
-            y: 26
+            anchors.centerIn: rectangle
             color: "#0d226e"
             text: qsTr("Выбрать аэродром на карте")
-            font.pixelSize: 16
+            font.pixelSize: 30
             horizontalAlignment: Text.AlignHCenter
             font.styleName: "Regular"
             font.family: "Arial"
@@ -534,8 +537,8 @@ Item {
             id: mouseArea
             x: 0
             y: 0
-            width: 400
-            height: 70
+            width: 600
+            height: 100
             anchors.fill: parent
                         hoverEnabled: true
                         onClicked: rectangle.clicked()
@@ -546,21 +549,21 @@ Item {
     DropShadow
         {
             anchors.fill: rectangle1
-            horizontalOffset: 7
-            verticalOffset: 7
-            radius: 10
-            samples: 15
+            horizontalOffset: 10
+            verticalOffset: 10
+            radius: 15
+            samples: 22
             source: rectangle1
             color: "#0d226e"
         }
     Rectangle {
         id: rectangle1
         anchors.bottom: example34.bottom
-        anchors.bottomMargin: -300
+        anchors.bottomMargin: -450
         anchors.left: rectangle.left
-        width: 190
-        height: 70
-        radius: 20
+        width: 285
+        height: 100
+        radius: 30
         border.width: 0
         color:
                 {"#e5f6fe"
@@ -609,11 +612,10 @@ Item {
 
         Text {
             id: text2
-            x: 59
-            y: 26
+            anchors.centerIn: rectangle1
             color: "#0d226e"
             text: qsTr("Обновить")
-            font.pixelSize: 16
+            font.pixelSize: 30
             horizontalAlignment: Text.AlignHCenter
             font.styleName: "Regular"
             font.family: "Arial"
@@ -622,21 +624,21 @@ Item {
             id: mouseArea1
             x: 0
             y: 0
-            width: 190
-            height: 70
+            width: 285
+            height: 100
             anchors.fill: parent
                         hoverEnabled: true
-                        onClicked: rectangle1.clicked()
+                        //onClicked:
                         cursorShape: Qt.PointingHandCursor
         }
     }
     DropShadow
         {
             anchors.fill: rectangle2
-            horizontalOffset: 7
-            verticalOffset: 7
-            radius: 10
-            samples: 15
+            horizontalOffset: 10
+            verticalOffset: 10
+            radius: 15
+            samples: 22
             source: rectangle2
             color: "#0d226e"
         }
@@ -644,11 +646,11 @@ Item {
     Rectangle {
         id: rectangle2
         anchors.bottom: example34.bottom
-        anchors.bottomMargin: -300
+        anchors.bottomMargin: -450
         anchors.right: rectangle.right
-        width: 190
-        height: 70
-        radius: 20
+        width: 285
+        height: 100
+        radius: 30
         border.width: 0
         color:
                 {"#e5f6fe"
@@ -697,29 +699,29 @@ Item {
 
         Text {
             id: text3
-            x: 55
-            y: 26
+            anchors.centerIn: rectangle2
             color: "#0d226e"
             text: qsTr("Отправить")
-            font.pixelSize: 16
+            font.pixelSize: 30
             horizontalAlignment: Text.AlignHCenter
             font.styleName: "Regular"
             font.family: "Arial"
         }
+
         MouseArea {
             id: mouseArea2
             x: 0
             y: 0
-            width: 190
-            height: 70
+            width: 285
+            height: 100
             anchors.fill: parent
                         hoverEnabled: true
                         onClicked:
                         {
+                            //onClicked: rectangle1.clicked
                             app.sendToFG("/json/position/altitude-ft", textInput34.text);
                             app.sendToFG("/json/position/latitude-deg", textInput22.text);
                             app.sendToFG("/json/position/longitude-deg", textInput11.text);
-                            rectangle2.clicked()
                         }
                         cursorShape: Qt.PointingHandCursor
         }

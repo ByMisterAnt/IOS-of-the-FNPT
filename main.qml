@@ -10,7 +10,7 @@ Window
     width: 1280
     height: 720
 
-    visible: true//false
+    visible: false
     color: "#334999"
     title: qsTr("IOS")
     // Пересчёт независимых от плотности пикселей в физические пиксели устройства
@@ -82,7 +82,7 @@ Window
             width: parent.width - mainrectangle.width
             height: parent.height
 
-            source: "qrc:/UI/Mapmain.qml"//"qrc:/UI/Speedmenu.qml"
+            source: "qrc:/UI/Setupmain.qml"
         }
     }
 }

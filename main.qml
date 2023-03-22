@@ -10,7 +10,7 @@ Window
     width: 1280
     height: 720
 
-    visible: false
+    visible: true//false
     color: "#334999"
     title: qsTr("IOS")
     // Пересчёт независимых от плотности пикселей в физические пиксели устройства
@@ -40,6 +40,7 @@ Window
                 anchors.fill: parent
                 anchors.centerIn: parent
                 anchors.leftMargin: 10
+                anchors.topMargin: 50
                 spacing: 10
 
                 Loader
@@ -48,11 +49,9 @@ Window
                     width: parent.width / 2 - 5
                     height: parent.height
 
-
                     // anchors.horizontalCenter: parent.horizontalCenter
-                    // anchors.verticalCenter: parent.verticalCenter
-                    anchors.centerIn: mainrectangle
-
+                    //anchors.centerIn: mainrectangle
+anchors.verticalCenter: parent.verticalCenter
                     source: "qrc:/Elements/Mainmenu.qml"
                 }
                 Loader{

@@ -3,9 +3,8 @@ import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
 import QtGraphicalEffects 1.12
 Item {
-    width: parent.width*5+50
-    height: parent.height+50
-
+    width: parent.width
+    height: parent.height
 
     Rectangle {
         id: rectangle234

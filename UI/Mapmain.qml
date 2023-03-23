@@ -94,7 +94,7 @@ Item
                             {
                                 id:line1
                                 anchors.bottom: parent.bottom
-                                anchors.topMargin: 5
+                                anchors.topMargin: 9
                                 anchors.left: parent.left
                                 width: 345
                                 height: 5

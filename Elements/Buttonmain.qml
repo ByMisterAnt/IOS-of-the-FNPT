@@ -66,7 +66,14 @@ Item {
                          height: 100
                          onClicked:
                          {
-                             podokno.source = model.path
+                             if (value == "btn5")
+                             {
+                                 app.sendToFG("/run.cgi?value=pause", "pause");
+                             }
+                             else
+                             {
+                                podokno.source = model.path
+                             }
                          }
                      }
                      Text

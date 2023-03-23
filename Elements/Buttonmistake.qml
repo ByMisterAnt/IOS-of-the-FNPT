@@ -103,6 +103,14 @@ MouseArea{
                      value: "btn2"
                                 // path: "qrc:/Buttonweather.qml"
                  }
+                 ListElement
+                         {
+                             text: "Ремонт"
+                            url: "qrc:/images/fixicon.png"
+                            value: "btn3"
+                                        //path: "qrc:/Buttonmain.qml"
+
+                         }
 
      }
 }

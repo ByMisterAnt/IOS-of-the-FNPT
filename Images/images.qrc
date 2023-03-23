@@ -24,5 +24,6 @@
         <file>weather.jpeg</file>
         <file>weight.png</file>
         <file>wind.png</file>
+        <file>fixicon.png</file>
     </qresource>
 </RCC>
